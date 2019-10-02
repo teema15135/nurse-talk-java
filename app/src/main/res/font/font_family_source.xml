@@ -36,5 +36,13 @@
         android:fontStyle="normal"
         android:fontWeight="400"
         android:font="@font/orator_std" />
+    <font
+        android:fontStyle="normal"
+        android:fontWeight="400"
+        android:font="@font/superspace_blod" />
+    <font
+        android:fontStyle="normal"
+        android:fontWeight="400"
+        android:font="@font/superspace_light" />
 
 </font-family>
