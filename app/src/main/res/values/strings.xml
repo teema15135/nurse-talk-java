@@ -1,3 +1,4 @@
 <resources>
     <string name="app_name">NurseTalk</string>
+    <string name="title_activity_vocab">VocabActivity</string>
 </resources>
