@@ -4,13 +4,16 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context=".SplashScreen">
+    tools:context=".SplashScreen"
+    android:gravity="center">
 
-    <TextView
+    <ImageView
+        android:id="@+id/splashLogo"
+        android:src="@drawable/splash_2"
         android:textSize="30dp"
         android:gravity="center"
-        android:layout_width="match_parent"
-        android:layout_height="match_parent"
+        android:layout_width="320dp"
+        android:layout_height="320dp"
         android:text="This is Splash."/>
 
 </RelativeLayout>
