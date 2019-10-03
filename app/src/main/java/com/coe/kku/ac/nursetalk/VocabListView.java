@@ -55,7 +55,7 @@ public class VocabListView extends BaseAdapter {
         holder.translated = (TextView) view.findViewById(R.id.translatedWordVocab);
 
         holder.eng_word.setText(words.get(i).getWord());
-        holder.pronunciation.setText(words.get(i).getPronunciation());
+        holder.pronunciation.setText("(" + words.get(i).getPronunciation() + ")");
         holder.translated.setText(words.get(i).getTranslated());
 
         Log.d(TAG, "getView: " + words.get(i).getWord());

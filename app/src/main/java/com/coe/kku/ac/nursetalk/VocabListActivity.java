@@ -28,6 +28,8 @@ public class VocabListActivity extends AppCompatActivity implements View.OnClick
 
     private int type;
 
+    private ArrayList<Word> words;
+
     private TextView headerTextView;
     private ListView listView;
     private ImageButton backImgButton, homeImgButton;
@@ -39,7 +41,7 @@ public class VocabListActivity extends AppCompatActivity implements View.OnClick
 
         this.type = getIntent().getIntExtra("type", 0);
 
-//        listView = (ListView) findViewById(R.id.vocabListView);
+        listView = (ListView) findViewById(R.id.vocabListView);
         headerTextView = (TextView) findViewById(R.id.headerVocabListTextView);
 
         backImgButton = (ImageButton) findViewById(R.id.backVocabListImgButton);
@@ -53,8 +55,6 @@ public class VocabListActivity extends AppCompatActivity implements View.OnClick
     }
 
     private void fetchVocabList() {
-        ArrayList<Word> words;
-
         switch (type) {
             default:
             case DISEASE:
@@ -70,14 +70,14 @@ public class VocabListActivity extends AppCompatActivity implements View.OnClick
                 Log.d(TAG, "example " + words.get(0).getWord());
         }
 
-//        VocabListView adapter = new VocabListView(getApplicationContext(), words);
-//        listView.setAdapter(adapter);
-//        listView.setOnItemClickListener(new AdapterView.OnItemClickListener() {
-//            @Override
-//            public void onItemClick(AdapterView<?> adapterView, View view, int i, long l) {
-//                String positionClick = String.valueOf(i);
-//            }
-//        });
+        VocabListView adapter = new VocabListView(getApplicationContext(), words);
+        listView.setAdapter(adapter);
+        listView.setOnItemClickListener(new AdapterView.OnItemClickListener() {
+            @Override
+            public void onItemClick(AdapterView<?> adapterView, View view, int i, long l) {
+                String positionClick = String.valueOf(i);
+            }
+        });
     }
 
     @Override
