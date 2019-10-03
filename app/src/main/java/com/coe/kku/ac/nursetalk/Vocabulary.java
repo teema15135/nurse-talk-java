@@ -14,62 +14,44 @@ public class Vocabulary {
 
     private String TAG = "Vocabulary Class";
 
-    private static Vocabulary instance;
+    private static boolean isLoaded = false;
 
-    private ArrayList<Word> symptomList;
-    private ArrayList<Word> diseaseList;
+    private static ArrayList<Word> symptomList;
+    private static ArrayList<Word> diseaseList;
 
-    public Vocabulary(Context context) {
-        AssetManager mngr = context.getAssets();
-        BufferedReader symptom_br, disease_br;
-        String line;
+    public Vocabulary() {
 
+    }
+
+    public static void loadVocab() {
+        if (isLoaded) return;
         symptomList = new ArrayList<>();
         diseaseList = new ArrayList<>();
 
-        // Read Symptoms words from file in assets
-        // and build an ArrayList
-        try {
-            InputStreamReader isr = new InputStreamReader(mngr.open("symptoms_list"));
-            symptom_br = new BufferedReader(isr);
-            while ((line = symptom_br.readLine()) != null) {
-                String[] splited = line.split("=");
-                symptomList.add(new Word(splited[0], splited[1], splited[2]));
-            }
-            symptom_br.close();
-            isr.close();
-        } catch (IOException ioException) {
-            Log.d(TAG, "Vocabulary: Catch on IOException (Symptom)");
-        }
-
-        // Read Disease words from file in assets
-        // and build an ArrayList
-        try {
-            InputStreamReader isr = new InputStreamReader(mngr.open("disease_list"));
-            disease_br = new BufferedReader(isr);
-            while ((line = disease_br.readLine()) != null) {
-                String[] splited = line.split("=");
-                diseaseList.add(new Word(splited[0], splited[1], splited[2]));
-            }
-            disease_br.close();
-            isr.close();
-        } catch (IOException ioException) {
-            Log.d(TAG, "Vocabulary: Catch on IOException (Disease)");
-        }
-        mngr.close();
+        addSymptomList();
+        addDiseaseList();
+        isLoaded = true;
     }
 
-    public ArrayList<Word> getSymptomWords() {
+    private static void addSymptomList() {
+        symptomList.add(new Word("ache", "เอค", "อาการปวด"));
+        symptomList.add(new Word("acute", "อะ-คิ้วท์", "อาการป่วยที่เกิดขึ้นอย่างฉับพลัน"));
+        symptomList.add(new Word("backache", "แบ็คเอค", "ปวดหลัง"));
+        symptomList.add(new Word("bleeding", "บลีดดิ้ง", "ที่มีเลือดไหล"));
+    }
+
+    private static void addDiseaseList() {
+        diseaseList.add(new Word("allergy", "อัลเลอรฺจี", "ภูมิแพ้"));
+        diseaseList.add(new Word("appendicitis", "แอพเพนดิไซทิส", "โรคไส้ติ่งอักเสบ"));
+        diseaseList.add(new Word("asthmatic", "แอสแมทิคฺ", "โรคหอบหืด"));
+        diseaseList.add(new Word("cancer", "แคนเซอร์", "โรคมะเร็ง"));
+    }
+
+    public static ArrayList<Word> getSymptomWords() {
         return symptomList;
     }
 
-    public ArrayList<Word> getDiseaseWords() {
+    public static ArrayList<Word> getDiseaseWords() {
         return diseaseList;
-    }
-
-    public static Vocabulary getInstance(Context context) {
-        if (instance == null) {
-            return new Vocabulary(context);
-        } else return instance;
     }
 }

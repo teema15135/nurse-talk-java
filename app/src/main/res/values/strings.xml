@@ -3,4 +3,6 @@
     <string name="title_activity_vocab">VocabActivity</string>
     <string name="vocabulary">Vocabulary</string>
     <string name="title_activity_test">TestActivity</string>
+    <string name="disease">Disease</string>
+    <string name="symptom">Symptom</string>
 </resources>

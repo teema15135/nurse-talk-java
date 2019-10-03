@@ -20,8 +20,7 @@ public class VocabActivity extends AppCompatActivity implements View.OnClickList
     public final static int DISEASE = 0;
     public final static int SYMPTOM = 1;
 
-    private Button thaiBtn, engBtn;
-    private ImageButton diseaseBtn;
+    private ImageButton diseaseBtn, symptomBtn, backBtn;
     private Vocabulary vocabInstance;
     private int type;
 
@@ -31,39 +30,29 @@ public class VocabActivity extends AppCompatActivity implements View.OnClickList
         setContentView(R.layout.activity_vocab);
 
 
-        diseaseBtn = (ImageButton)findViewById(R.id.diseaseImgButton);
+        diseaseBtn = (ImageButton) findViewById(R.id.diseaseImgButton);
+        symptomBtn = (ImageButton) findViewById(R.id.symptomImgButton);
 
-        diseaseBtn.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View v) {
-                startActivity(new Intent(VocabActivity.this, TestActivity.class));
-            }
-        });
+        backBtn = (ImageButton) findViewById(R.id.backVocabMenuImgButton);
 
+        diseaseBtn.setOnClickListener(this);
+        symptomBtn.setOnClickListener(this);
+        backBtn.setOnClickListener(this);
     }
 
-    private void fetchVocabList() {
-
-    }
-
-    private void speakThai(String message) {
-        VocabTTS.getInstance(VocabActivity.this)
-                .setLocale(new Locale("th"))
-                .speak(message);
-    }
-
-    private void speakEnglish(String message) {
-        VocabTTS.getInstance(VocabActivity.this)
-                .setLocale(new Locale("en"))
-                .speak(message);
-    }
 
     @Override
     public void onClick(View view) {
-        if (view == thaiBtn) {
-            speakThai("ฉันกำลังพูดภาษาไทย");
-        } else if (view == engBtn) {
-            speakEnglish("I'm speaking English");
+        if (view == diseaseBtn) {
+            Intent i = new Intent(VocabActivity.this, VocabListActivity.class);
+            i.putExtra("type", VocabListActivity.DISEASE);
+            startActivity(i);
+        } else if (view == symptomBtn) {
+            Intent i = new Intent(VocabActivity.this, VocabListActivity.class);
+            i.putExtra("type", VocabListActivity.SYMPTOM);
+            startActivity(i);
+        } else if (view == backBtn) {
+            finish();
         }
     }
 }
