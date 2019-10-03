@@ -2,4 +2,5 @@
     <string name="app_name">NurseTalk</string>
     <string name="title_activity_vocab">VocabActivity</string>
     <string name="vocabulary">Vocabulary</string>
+    <string name="title_activity_test">TestActivity</string>
 </resources>
