@@ -6,6 +6,7 @@
     android:layout_height="match_parent"
     tools:context=".VocabActivity">
 
+
     <LinearLayout
         android:layout_width="match_parent"
         android:layout_height="match_parent"
@@ -18,6 +19,15 @@
             android:layout_weight="1"
             android:background="@color/light_blue"
             android:translationZ="5dp">
+
+            <ImageButton
+                android:id="@+id/backVocabMenuImgButton"
+                android:layout_width="@dimen/back_button_size"
+                android:layout_height="@dimen/back_button_size"
+                android:layout_margin="@dimen/back_button_margin"
+                android:background="@android:color/transparent"
+                android:scaleType="fitCenter"
+                android:src="@drawable/back_w_light" />
 
             <TextView
                 android:layout_width="match_parent"
@@ -47,22 +57,21 @@
             android:layout_width="0dp"
             android:layout_height="match_parent"
             android:layout_weight="1"
-            android:paddingLeft="20dp"
-            android:gravity="center">
+            android:gravity="center"
+            android:paddingLeft="20dp">
 
             <View
                 android:layout_width="100dp"
                 android:layout_height="100dp"
                 android:background="@drawable/shape_circle"
                 android:gravity="center"
-                android:translationZ="3dp">
-            </View>
+                android:translationZ="3dp"></View>
 
             <ImageButton
-                android:layout_centerVertical="true"
                 android:id="@+id/diseaseImgButton"
                 android:layout_width="90dp"
                 android:layout_height="90dp"
+                android:layout_centerVertical="true"
                 android:layout_marginLeft="-10dp"
                 android:background="@android:color/transparent"
                 android:scaleType="fitCenter"
@@ -75,23 +84,22 @@
             android:layout_width="0dp"
             android:layout_height="match_parent"
             android:layout_weight="1"
-            android:paddingRight="20dp"
-            android:gravity="center">
+            android:gravity="center"
+            android:paddingRight="20dp">
 
             <View
                 android:layout_width="100dp"
                 android:layout_height="100dp"
                 android:background="@drawable/shape_circle"
                 android:gravity="center"
-                android:translationZ="3dp">
-            </View>
+                android:translationZ="3dp"></View>
 
             <ImageButton
-                android:layout_marginLeft="4dp"
-                android:layout_centerVertical="true"
                 android:id="@+id/symptomImgButton"
                 android:layout_width="90dp"
                 android:layout_height="90dp"
+                android:layout_centerVertical="true"
+                android:layout_marginLeft="4dp"
                 android:background="@android:color/transparent"
                 android:scaleType="fitCenter"
                 android:src="@drawable/vocab_headache"
