@@ -4,8 +4,8 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context=".VocabListActivity"
-    android:orientation="vertical">
+    android:orientation="vertical"
+    tools:context=".VocabListActivity">
 
     <RelativeLayout
         android:layout_width="match_parent"
@@ -46,9 +46,9 @@
     </RelativeLayout>
 
     <ListView
-    android:id="@+id/vocabListView"
-    android:layout_width="match_parent"
-    android:layout_height="match_parent"/>
+        android:id="@+id/vocabListView"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent" />
 
 
 </LinearLayout>
