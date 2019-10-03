@@ -45,6 +45,12 @@ public class Vocabulary {
         diseaseList.add(new Word("appendicitis", "แอพเพนดิไซทิส", "โรคไส้ติ่งอักเสบ"));
         diseaseList.add(new Word("asthmatic", "แอสแมทิคฺ", "โรคหอบหืด"));
         diseaseList.add(new Word("cancer", "แคนเซอร์", "โรคมะเร็ง"));
+        diseaseList.add(new Word("chicken pox", "ชิคเคน พ็อกสฺ", "อีสุกอีใส"));
+        diseaseList.add(new Word("chronic", "ครอนิค", "เรื้อรัง"));
+        diseaseList.add(new Word("cirrhosis", "สิโรซิส", "โรคตับแข็ง"));
+        diseaseList.add(new Word("cold", "โคลด์", "โรคหวัด, หนาว"));
+        diseaseList.add(new Word("dengue fever", "เดงกี ฟีเวอร์", "ไข้เลือดออก"));
+        diseaseList.add(new Word("depression", "ดีเพรสเชิน", "โรคซึมเศร้า"));
     }
 
     public static ArrayList<Word> getSymptomWords() {

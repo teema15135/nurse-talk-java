@@ -26,13 +26,17 @@
                 android:fontFamily="@font/nunito_bold"
                 android:gravity="center_vertical"
                 android:text="Eng Word"
+                android:textColor="@color/black"
                 android:textSize="30sp" />
 
-            <ImageView
+            <ImageButton
+                android:id="@+id/readWordImgButton"
                 android:layout_width="25dp"
                 android:layout_height="25dp"
                 android:layout_gravity="bottom"
                 android:layout_marginBottom="2dp"
+                android:background="@android:color/transparent"
+                android:scaleType="fitCenter"
                 android:src="@drawable/play_button" />
 
         </LinearLayout>
@@ -47,19 +51,19 @@
                 android:layout_width="wrap_content"
                 android:layout_height="match_parent"
                 android:layout_marginRight="10dp"
-                android:fontFamily="@font/orator_std"
+                android:fontFamily="@font/superspace_light"
                 android:gravity="center_vertical"
                 android:text="ภาษาไทยนะจ๊ะ"
-                android:textSize="20sp" />
+                android:textSize="24sp" />
 
             <TextView
                 android:id="@+id/pronunciation"
                 android:layout_width="wrap_content"
                 android:layout_height="match_parent"
-                android:fontFamily="@font/orator_std"
+                android:fontFamily="@font/superspace_light"
                 android:gravity="center_vertical"
                 android:text="(คำอ่าน)"
-                android:textSize="20sp" />
+                android:textSize="24sp" />
 
         </LinearLayout>
 
