@@ -22,6 +22,7 @@ public class ConversationActivity extends AppCompatActivity implements View.OnCl
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_conversation);
+
         bloodTest = (ImageView) findViewById(R.id.bloodTestImageView);
         painManagement = (ImageView) findViewById(R.id.painManagementImageView);
         patientInterview = (ImageView) findViewById(R.id.patientInterviewImageView);
@@ -67,18 +68,35 @@ public class ConversationActivity extends AppCompatActivity implements View.OnCl
 
     @Override
     public void onClick(View view) {
-        if (view == bloodTest) {
-            Log.d(TAG, "onClick: Blood Test");
-        } else if (view == painManagement) {
-            Log.d(TAG, "onClick: Pain Manager");
-        } else if (view == patientInterview) {
-            Log.d(TAG, "onClick: Patient Interview");
-        } else if (view == takeAVital) {
-            Log.d(TAG, "onClick: Take a Vital sign");
-        } else if (view == urineExam) {
-            Log.d(TAG, "onClick: Urine Examination");
-        } else if (view == howToTakeAMedicine) {
-            Log.d(TAG, "onClick: How to take a medicine");
+        if (view == urineExam) {
+            Intent i = new Intent(ConversationActivity.this, ConverAnimationActivity.class);
+            i.putExtra("content", 1);
+            startActivity(i);
+        }
+        else if (view == bloodTest) {
+            Intent i = new Intent(ConversationActivity.this, ConverAnimationActivity.class);
+            i.putExtra("content", 2);
+            startActivity(i);
+        }
+        else if (view == patientInterview) {
+            Intent i = new Intent(ConversationActivity.this, ConverAnimationActivity.class);
+            i.putExtra("content", 3);
+            startActivity(i);
+        }
+        else if (view == takeAVital) {
+            Intent i = new Intent(ConversationActivity.this, ConverAnimationActivity.class);
+            i.putExtra("content", 4);
+            startActivity(i);
+        }
+        else if (view == painManagement) {
+            Intent i = new Intent(ConversationActivity.this, ConverAnimationActivity.class);
+            i.putExtra("content", 5);
+            startActivity(i);
+        }
+        else if (view == howToTakeAMedicine) {
+            Intent i = new Intent(ConversationActivity.this, ConverAnimationActivity.class);
+            i.putExtra("content", 6);
+            startActivity(i);
         }
     }
 }

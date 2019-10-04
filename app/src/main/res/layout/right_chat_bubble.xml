@@ -1,0 +1,45 @@
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content">
+
+    <LinearLayout
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginRight="16dp"
+        android:layout_alignParentRight="true"
+        android:orientation="horizontal">
+
+        <LinearLayout
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_alignParentRight="true"
+            android:layout_gravity="center_vertical"
+            android:gravity="center_vertical"
+            android:background="@drawable/speech_bubble_right"
+            android:orientation="vertical">
+
+            <TextView
+                android:id="@+id/txt_msg"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:maxWidth="@dimen/conver_max_width"
+                android:textColor="@color/dark"
+                android:textSize="15sp"
+                android:text="5555555"
+                android:fontFamily="@font/nunito_semibold"/>
+
+        </LinearLayout>
+
+        <ImageView
+            android:layout_gravity="bottom"
+            android:layout_marginBottom="10dp"
+            android:layout_width="@dimen/conver_ic_nurse_size"
+            android:layout_height="@dimen/conver_ic_nurse_size"
+            android:src="@drawable/ic_patient"
+            android:elevation="5dp"/>
+
+    </LinearLayout>
+
+
+
+</RelativeLayout>
