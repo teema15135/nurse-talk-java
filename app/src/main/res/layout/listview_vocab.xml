@@ -9,6 +9,8 @@
         android:layout_height="80dp"
         android:orientation="vertical"
         android:paddingLeft="20dp"
+        android:paddingTop="7dp"
+        android:paddingBottom="7dp"
         android:weightSum="2">
 
         <LinearLayout
@@ -27,23 +29,24 @@
                 android:gravity="center_vertical"
                 android:text="Eng Word"
                 android:textColor="@color/black"
-                android:textSize="30sp" />
+                android:textSize="23sp" />
 
-            <ImageButton
-                android:id="@+id/readWordImgButton"
-                android:layout_width="25dp"
-                android:layout_height="25dp"
-                android:layout_gravity="bottom"
-                android:layout_marginBottom="2dp"
-                android:background="@android:color/transparent"
-                android:scaleType="fitCenter"
-                android:src="@drawable/play_button" />
+                <ImageButton
+                    android:id="@+id/readWordImgButton"
+                    android:layout_width="25dp"
+                    android:layout_height="25dp"
+                    android:layout_gravity="bottom"
+                    android:layout_marginBottom="3dp"
+                    android:background="@android:color/transparent"
+                    android:scaleType="fitCenter"
+                    android:src="@drawable/play_button" />
 
         </LinearLayout>
 
         <LinearLayout
             android:layout_width="match_parent"
             android:layout_height="0dp"
+            android:layout_marginTop="-4dp"
             android:layout_weight="1">
 
             <TextView
@@ -51,19 +54,20 @@
                 android:layout_width="wrap_content"
                 android:layout_height="match_parent"
                 android:layout_marginRight="10dp"
-                android:fontFamily="@font/superspace_light"
+                android:fontFamily="@font/mitr_light"
                 android:gravity="center_vertical"
                 android:text="ภาษาไทยนะจ๊ะ"
-                android:textSize="24sp" />
+                android:textSize="16sp" />
 
             <TextView
                 android:id="@+id/pronunciation"
                 android:layout_width="wrap_content"
                 android:layout_height="match_parent"
-                android:fontFamily="@font/superspace_light"
+                android:layout_marginLeft="3dp"
+                android:fontFamily="@font/mitr_light"
                 android:gravity="center_vertical"
                 android:text="(คำอ่าน)"
-                android:textSize="24sp" />
+                android:textSize="16sp" />
 
         </LinearLayout>
 

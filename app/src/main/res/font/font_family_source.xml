@@ -44,5 +44,9 @@
         android:fontStyle="normal"
         android:fontWeight="400"
         android:font="@font/superspace_light" />
+    <font
+        android:fontStyle="normal"
+        android:fontWeight="400"
+        android:font="@font/mitr_light" />
 
 </font-family>
