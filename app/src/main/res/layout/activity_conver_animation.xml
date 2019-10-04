@@ -41,7 +41,7 @@
             android:textSize="24sp" />
 
         <ImageButton
-            android:id="@+id/homeVocabListImgButton"
+            android:id="@+id/homeConverAnimationImgButton"
             android:layout_width="@dimen/home_button_size"
             android:layout_height="@dimen/home_button_size"
             android:layout_alignParentRight="true"

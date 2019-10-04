@@ -4,6 +4,7 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
+    android:background="@color/dark_blue"
     tools:context=".SplashScreen"
     android:gravity="center">
 
@@ -12,8 +13,8 @@
         android:src="@drawable/splash_2"
         android:textSize="30dp"
         android:gravity="center"
-        android:layout_width="320dp"
-        android:layout_height="320dp"
+        android:layout_width="200dp"
+        android:layout_height="200dp"
         android:text="This is Splash."/>
 
 </RelativeLayout>
