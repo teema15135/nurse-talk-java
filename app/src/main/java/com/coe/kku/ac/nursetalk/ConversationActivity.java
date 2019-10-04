@@ -3,9 +3,11 @@ package com.coe.kku.ac.nursetalk;
 import androidx.appcompat.app.AppCompatActivity;
 
 import android.content.Intent;
+import android.os.Build;
 import android.os.Bundle;
 import android.util.Log;
 import android.view.View;
+import android.widget.ImageButton;
 import android.widget.ImageView;
 
 public class ConversationActivity extends AppCompatActivity implements View.OnClickListener {
@@ -27,13 +29,24 @@ public class ConversationActivity extends AppCompatActivity implements View.OnCl
         urineExam = (ImageView) findViewById(R.id.urineExamImageView);
         howToTakeAMedicine = (ImageView) findViewById(R.id.howToTakeAMedicineImageView);
 
-        bloodTest.setClipToOutline(true);
-
-        painManagement.setClipToOutline(true);
-        patientInterview.setClipToOutline(true);
-        takeAVital.setClipToOutline(true);
-        urineExam.setClipToOutline(true);
-        howToTakeAMedicine.setClipToOutline(true);
+        if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.LOLLIPOP) {
+            bloodTest.setClipToOutline(true);
+        }
+        if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.LOLLIPOP) {
+            painManagement.setClipToOutline(true);
+        }
+        if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.LOLLIPOP) {
+            patientInterview.setClipToOutline(true);
+        }
+        if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.LOLLIPOP) {
+            takeAVital.setClipToOutline(true);
+        }
+        if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.LOLLIPOP) {
+            urineExam.setClipToOutline(true);
+        }
+        if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.LOLLIPOP) {
+            howToTakeAMedicine.setClipToOutline(true);
+        }
 
         bloodTest.setOnClickListener(this);
         painManagement.setOnClickListener(this);
@@ -42,7 +55,7 @@ public class ConversationActivity extends AppCompatActivity implements View.OnCl
         urineExam.setOnClickListener(this);
         howToTakeAMedicine.setOnClickListener(this);
 
-        back = (ImageButton) findViewById(R.id.backConversaImgButton);
+        back = (ImageButton) findViewById(R.id.backConversationMenuImgButton);
 
         back.setOnClickListener(new View.OnClickListener() {
             @Override
