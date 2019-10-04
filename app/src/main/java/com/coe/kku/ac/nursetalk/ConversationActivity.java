@@ -2,6 +2,7 @@ package com.coe.kku.ac.nursetalk;
 
 import androidx.appcompat.app.AppCompatActivity;
 
+import android.content.Intent;
 import android.os.Bundle;
 import android.util.Log;
 import android.view.View;
@@ -10,14 +11,15 @@ import android.widget.ImageView;
 public class ConversationActivity extends AppCompatActivity implements View.OnClickListener {
 
     private static final String TAG = "ConversationActivity";
-
     private ImageView bloodTest, painManagement, patientInterview, takeAVital, urineExam, howToTakeAMedicine;
+
+
+    ImageButton back;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_conversation);
-
         bloodTest = (ImageView) findViewById(R.id.bloodTestImageView);
         painManagement = (ImageView) findViewById(R.id.painManagementImageView);
         patientInterview = (ImageView) findViewById(R.id.patientInterviewImageView);
@@ -25,8 +27,8 @@ public class ConversationActivity extends AppCompatActivity implements View.OnCl
         urineExam = (ImageView) findViewById(R.id.urineExamImageView);
         howToTakeAMedicine = (ImageView) findViewById(R.id.howToTakeAMedicineImageView);
 
-
         bloodTest.setClipToOutline(true);
+
         painManagement.setClipToOutline(true);
         patientInterview.setClipToOutline(true);
         takeAVital.setClipToOutline(true);
@@ -39,6 +41,15 @@ public class ConversationActivity extends AppCompatActivity implements View.OnCl
         takeAVital.setOnClickListener(this);
         urineExam.setOnClickListener(this);
         howToTakeAMedicine.setOnClickListener(this);
+
+        back = (ImageButton) findViewById(R.id.backConversaImgButton);
+
+        back.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                startActivity(new Intent(ConversationActivity.this, MainActivity.class));
+            }
+        });
     }
 
     @Override
