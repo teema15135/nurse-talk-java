@@ -25,7 +25,7 @@ public class ConverAnimationActivity extends AppCompatActivity {
 
     private ListView listView;
     private View touchView;
-    private ImageButton back;
+    private ImageButton back, home;
     private ImageView bg;
     private TextView title;
     private RelativeLayout topbarLayout;
@@ -49,6 +49,7 @@ public class ConverAnimationActivity extends AppCompatActivity {
         listView = (ListView) findViewById(R.id.conver_list);
         touchView = (View) findViewById(R.id.conver_touch);
         back = (ImageButton) findViewById(R.id.backConverAnimationButton);
+        home = (ImageButton) findViewById(R.id.homeConverAnimationImgButton);
         topbarLayout = (RelativeLayout) findViewById(R.id.conver_topbar);
         title = (TextView) findViewById(R.id.conver_title);
         bg = (ImageView) findViewById(R.id.conver_bg);
@@ -65,6 +66,12 @@ public class ConverAnimationActivity extends AppCompatActivity {
             @Override
             public void onClick(View v) {
                 startActivity(new Intent(ConverAnimationActivity.this, ConversationActivity.class));
+            }
+        });
+        home.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                startActivity(new Intent(ConverAnimationActivity.this, MainActivity.class));
             }
         });
 
@@ -117,6 +124,7 @@ public class ConverAnimationActivity extends AppCompatActivity {
         }
 
 
+        // touch screen for add msg to list
         touchView.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
@@ -136,7 +144,7 @@ public class ConverAnimationActivity extends AppCompatActivity {
                     mCounter++;
                 }
                 else {
-                    //nothing to do
+                    //nothing to do~~~~~~
                 }
 
             }
