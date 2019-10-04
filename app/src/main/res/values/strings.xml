@@ -5,4 +5,10 @@
     <string name="title_activity_test">TestActivity</string>
     <string name="disease">Disease</string>
     <string name="symptom">Symptom</string>
+    <string name="patient_interview">Patient Interview</string>
+    <string name="take_a_vital">Take a vital</string>
+    <string name="blood_test">Blood Test</string>
+    <string name="urine_examination">Urine Examination</string>
+    <string name="pain_management">Pain Management</string>
+    <string name="how_to_take_a_medicine">How to take\na medicine</string>
 </resources>

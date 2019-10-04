@@ -12,4 +12,8 @@
     <dimen name="home_button_size">30dp</dimen>
     <dimen name="back_button_margin">20dp</dimen>
     <dimen name="home_button_margin">20dp</dimen>
+
+    <dimen name="conversation_menu_left_margin">25dp</dimen>
+    <dimen name="conversation_shadow_Dx_Dy">3</dimen>
+    <dimen name="conversation_shadow_radius">2</dimen>
 </resources>
