@@ -10,10 +10,16 @@
     <color name="light_blue">#98C0B5</color>
     <color name="cream">#F2F0D9</color>
     <color name="text_shadow">#7F000000</color>
-    <color name="urine_bar">#ADDCCB</color>
-    <color name="blood_bar">#E4D48F</color>
     <color name="patient_bar">#F3DFE5</color>
-    <color name="medicine_bar">#DDA2AE</color>
-    <color name="pain_bar">#C2DC71</color>
+    <color name="dark_patient_bar">#84787C</color>
     <color name="sign_bar">#E1B2BB</color>
+    <color name="dark_sign_bar">#7A6065</color>
+    <color name="blood_bar">#E4D48F</color>
+    <color name="dark_blood_bar">#7B734D</color>
+    <color name="urine_bar">#ADDCCB</color>
+    <color name="dark_urine_bar">#5E776E</color>
+    <color name="pain_bar">#C2DC71</color>
+    <color name="dark_pain_bar">#6A783D</color>
+    <color name="medicine_bar">#DDA2AE</color>
+    <color name="dark_medicine_bar">#78585E</color>
 </resources>
