@@ -77,8 +77,8 @@ public class Conversation {
     };
 
     public String medicineArr[] = {
-            "",
-            "Excuse me! I don’t understand how to take a medicine. Can you explain to me, please?",
+            "Hello, can I help you ?",
+            "Yes, I don’t understand how to take a medicine. Can you explain to me, please?",
             "Yes. This medicine is ferrous fumarate. You can’t take this medicine with milk.",
             "So why not?",
             "Because milk will disrupt absorption of ferrous fumarate.",
