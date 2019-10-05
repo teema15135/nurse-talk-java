@@ -22,9 +22,9 @@
         android:weightSum="3">
 
         <TextView
-            android:layout_marginTop="50dp"
             android:layout_width="match_parent"
             android:layout_height="0dp"
+            android:layout_marginTop="50dp"
             android:layout_weight="1"
             android:fontFamily="@font/nunito_bold"
             android:gravity="center"
@@ -43,10 +43,10 @@
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:layout_marginLeft="@dimen/conversation_menu_left_margin_first"
-                android:text="all conversations"
                 android:fontFamily="@font/roboto_regular"
-                android:textSize="12sp"
-                android:textAllCaps="true"/>
+                android:text="all conversations"
+                android:textAllCaps="true"
+                android:textSize="12sp" />
 
             <HorizontalScrollView
                 android:layout_width="match_parent"
@@ -59,80 +59,6 @@
                     android:layout_height="wrap_content"
                     android:orientation="horizontal"
                     android:paddingTop="10dp">
-
-                    <!--Urine Examination-->
-                    <RelativeLayout
-                        android:layout_width="wrap_content"
-                        android:layout_height="match_parent"
-                        android:layout_marginLeft="@dimen/conversation_menu_left_margin_first"
-                        android:background="@drawable/round_outline"
-                        android:outlineProvider="background">
-
-                        <ImageView
-                            android:id="@+id/urineExamImageView"
-                            android:layout_width="@dimen/conver_btn_width"
-                            android:layout_height="@dimen/conver_btn_height"
-                            android:background="@drawable/round_outline"
-                            android:clickable="true"
-                            android:outlineProvider="background"
-                            android:scaleType="centerCrop"
-                            android:src="@drawable/bg_urine_exam"
-                            android:translationZ="3dp" />
-
-                        <TextView
-                            android:shadowColor="@color/text_shadow"
-                            android:shadowDx="2"
-                            android:shadowDy="2"
-                            android:shadowRadius="10"
-                            android:layout_width="wrap_content"
-                            android:layout_height="wrap_content"
-                            android:layout_alignBottom="@id/urineExamImageView"
-                            android:layout_centerHorizontal="true"
-                            android:layout_marginBottom="15dp"
-                            android:fontFamily="@font/nunito_semibold"
-                            android:text="@string/urine_examination"
-                            android:textColor="@color/white"
-                            android:textSize="20dp"
-                            android:translationZ="4dp" />
-
-                    </RelativeLayout>
-
-                    <!--Blood Test-->
-                    <RelativeLayout
-                        android:layout_width="wrap_content"
-                        android:layout_height="match_parent"
-                        android:layout_marginLeft="@dimen/conversation_menu_left_margin"
-                        android:background="@drawable/round_outline"
-                        android:outlineProvider="background">
-
-                        <ImageView
-                            android:id="@+id/bloodTestImageView"
-                            android:layout_width="@dimen/conver_btn_width"
-                            android:layout_height="@dimen/conver_btn_height"
-                            android:background="@drawable/round_outline"
-                            android:clickable="true"
-                            android:outlineProvider="background"
-                            android:scaleType="centerCrop"
-                            android:src="@drawable/bg_blood_test"
-                            android:translationZ="3dp" />
-
-                        <TextView
-                            android:shadowColor="@color/text_shadow"
-                            android:shadowDx="2"
-                            android:shadowDy="2"
-                            android:shadowRadius="10"
-                            android:layout_width="wrap_content"
-                            android:layout_height="wrap_content"
-                            android:layout_alignBottom="@id/bloodTestImageView"
-                            android:layout_centerHorizontal="true"
-                            android:layout_marginBottom="15dp"
-                            android:fontFamily="@font/nunito_semibold"
-                            android:text="@string/blood_test"
-                            android:textColor="@color/white"
-                            android:textSize="20dp"
-                            android:translationZ="4dp" />
-
-                    </RelativeLayout>
 
                     <!--Patient Interview-->
                     <RelativeLayout
@@ -154,16 +80,16 @@
                             android:translationZ="3dp" />
 
                         <TextView
-                            android:shadowColor="@color/text_shadow"
-                            android:shadowDx="2"
-                            android:shadowDy="2"
-                            android:shadowRadius="10"
                             android:layout_width="wrap_content"
                             android:layout_height="wrap_content"
                             android:layout_alignBottom="@id/patientInterviewImageView"
                             android:layout_centerHorizontal="true"
                             android:layout_marginBottom="15dp"
                             android:fontFamily="@font/nunito_semibold"
+                            android:shadowColor="@color/text_shadow"
+                            android:shadowDx="2"
+                            android:shadowDy="2"
+                            android:shadowRadius="10"
                             android:text="@string/patient_interview"
                             android:textColor="@color/white"
                             android:textSize="20dp"
@@ -191,17 +117,91 @@
                             android:translationZ="3dp" />
 
                         <TextView
-                            android:shadowColor="@color/text_shadow"
-                            android:shadowDx="2"
-                            android:shadowDy="2"
-                            android:shadowRadius="10"
                             android:layout_width="wrap_content"
                             android:layout_height="wrap_content"
                             android:layout_alignBottom="@id/takeAVitalImageView"
                             android:layout_centerHorizontal="true"
                             android:layout_marginBottom="15dp"
                             android:fontFamily="@font/nunito_semibold"
+                            android:shadowColor="@color/text_shadow"
+                            android:shadowDx="2"
+                            android:shadowDy="2"
+                            android:shadowRadius="10"
                             android:text="@string/take_a_vital"
+                            android:textColor="@color/white"
+                            android:textSize="20dp"
+                            android:translationZ="4dp" />
+
+                    </RelativeLayout>
+
+                    <!--Blood Test-->
+                    <RelativeLayout
+                        android:layout_width="wrap_content"
+                        android:layout_height="match_parent"
+                        android:layout_marginLeft="@dimen/conversation_menu_left_margin"
+                        android:background="@drawable/round_outline"
+                        android:outlineProvider="background">
+
+                        <ImageView
+                            android:id="@+id/bloodTestImageView"
+                            android:layout_width="@dimen/conver_btn_width"
+                            android:layout_height="@dimen/conver_btn_height"
+                            android:background="@drawable/round_outline"
+                            android:clickable="true"
+                            android:outlineProvider="background"
+                            android:scaleType="centerCrop"
+                            android:src="@drawable/bg_blood_test"
+                            android:translationZ="3dp" />
+
+                        <TextView
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_alignBottom="@id/bloodTestImageView"
+                            android:layout_centerHorizontal="true"
+                            android:layout_marginBottom="15dp"
+                            android:fontFamily="@font/nunito_semibold"
+                            android:shadowColor="@color/text_shadow"
+                            android:shadowDx="2"
+                            android:shadowDy="2"
+                            android:shadowRadius="10"
+                            android:text="@string/blood_test"
+                            android:textColor="@color/white"
+                            android:textSize="20dp"
+                            android:translationZ="4dp" />
+
+                    </RelativeLayout>
+
+                    <!--Urine Examination-->
+                    <RelativeLayout
+                        android:layout_width="wrap_content"
+                        android:layout_height="match_parent"
+                        android:layout_marginLeft="@dimen/conversation_menu_left_margin_first"
+                        android:background="@drawable/round_outline"
+                        android:outlineProvider="background">
+
+                        <ImageView
+                            android:id="@+id/urineExamImageView"
+                            android:layout_width="@dimen/conver_btn_width"
+                            android:layout_height="@dimen/conver_btn_height"
+                            android:background="@drawable/round_outline"
+                            android:clickable="true"
+                            android:outlineProvider="background"
+                            android:scaleType="centerCrop"
+                            android:src="@drawable/bg_urine_exam"
+                            android:translationZ="3dp" />
+
+                        <TextView
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_alignBottom="@id/urineExamImageView"
+                            android:layout_centerHorizontal="true"
+                            android:layout_marginBottom="15dp"
+                            android:fontFamily="@font/nunito_semibold"
+                            android:shadowColor="@color/text_shadow"
+                            android:shadowDx="2"
+                            android:shadowDy="2"
+                            android:shadowRadius="10"
+                            android:text="@string/urine_examination"
                             android:textColor="@color/white"
                             android:textSize="20dp"
                             android:translationZ="4dp" />
@@ -228,16 +228,16 @@
                             android:translationZ="3dp" />
 
                         <TextView
-                            android:shadowColor="@color/text_shadow"
-                            android:shadowDx="2"
-                            android:shadowDy="2"
-                            android:shadowRadius="10"
                             android:layout_width="wrap_content"
                             android:layout_height="wrap_content"
                             android:layout_alignBottom="@id/painManagementImageView"
                             android:layout_centerHorizontal="true"
                             android:layout_marginBottom="15dp"
                             android:fontFamily="@font/nunito_semibold"
+                            android:shadowColor="@color/text_shadow"
+                            android:shadowDx="2"
+                            android:shadowDy="2"
+                            android:shadowRadius="10"
                             android:text="@string/pain_management"
                             android:textColor="@color/white"
                             android:textSize="20dp"
@@ -265,16 +265,16 @@
                             android:translationZ="3dp" />
 
                         <TextView
-                            android:shadowColor="@color/text_shadow"
-                            android:shadowDx="2"
-                            android:shadowDy="2"
-                            android:shadowRadius="10"
                             android:layout_width="wrap_content"
                             android:layout_height="wrap_content"
                             android:layout_alignBottom="@id/howToTakeAMedicineImageView"
                             android:layout_centerHorizontal="true"
                             android:layout_marginBottom="15dp"
                             android:fontFamily="@font/nunito_semibold"
+                            android:shadowColor="@color/text_shadow"
+                            android:shadowDx="2"
+                            android:shadowDy="2"
+                            android:shadowRadius="10"
                             android:text="@string/how_to_take_a_medicine"
                             android:textColor="@color/white"
                             android:textSize="20dp"
