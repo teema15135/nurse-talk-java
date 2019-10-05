@@ -84,7 +84,7 @@ public class ConverAnimationActivity extends AppCompatActivity {
         content = (int) intent.getIntExtra("content", 0);
         if (content == 1) {
             bg.setBackgroundResource(R.drawable.bg_urine_exam_darker);
-            topbarLayout.setBackgroundResource(R.color.urine_bar);
+            topbarLayout.setBackgroundResource(R.color.dark_urine_bar);
             title.setText("Urine Examination");
             maxBubble = 7;
             msgArr = objConversation.urineArr;
