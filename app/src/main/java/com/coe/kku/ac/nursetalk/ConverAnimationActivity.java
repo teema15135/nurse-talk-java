@@ -83,44 +83,44 @@ public class ConverAnimationActivity extends AppCompatActivity {
         Intent intent = getIntent();
         content = (int) intent.getIntExtra("content", 0);
         if (content == 1) {
-            bg.setBackgroundResource(R.drawable.bg_urine_exam);
+            bg.setBackgroundResource(R.drawable.bg_urine_exam_darker);
             topbarLayout.setBackgroundResource(R.color.urine_bar);
             title.setText("Urine Examination");
             maxBubble = 7;
             msgArr = objConversation.urineArr;
         }
         else if (content == 2) {
-            bg.setBackgroundResource(R.drawable.bg_blood_test);
-            topbarLayout.setBackgroundResource(R.color.blood_bar);
+            bg.setBackgroundResource(R.drawable.bg_blood_test_darker);
+            topbarLayout.setBackgroundResource(R.color.dark_blood_bar);
             title.setText("Blood Test");
             maxBubble = 14;
             msgArr = objConversation.bloodArr;
 
         }
         else if (content == 3) {
-            bg.setBackgroundResource(R.drawable.bg_patient_interview);
-            topbarLayout.setBackgroundResource(R.color.patient_bar);
+            bg.setBackgroundResource(R.drawable.bg_patient_interview_darker);
+            topbarLayout.setBackgroundResource(R.color.dark_patient_bar);
             title.setText("Patient Interview");
             maxBubble = 15;
             msgArr = objConversation.patientArr;
         }
         else if (content == 4) {
-            bg.setBackgroundResource(R.drawable.bg_take_a_vital);
-            topbarLayout.setBackgroundResource(R.color.sign_bar);
+            bg.setBackgroundResource(R.drawable.bg_take_a_vital_darker);
+            topbarLayout.setBackgroundResource(R.color.dark_sign_bar);
             title.setText("Take a Vital Sign");
             maxBubble = 12;
             msgArr = objConversation.vitalSignArr;
         }
         else if (content == 5) {
-            bg.setBackgroundResource(R.drawable.bg_pain);
-            topbarLayout.setBackgroundResource(R.color.pain_bar);
+            bg.setBackgroundResource(R.drawable.bg_pain_darker);
+            topbarLayout.setBackgroundResource(R.color.dark_pain_bar);
             title.setText("Pain Management");
             maxBubble = 11;
             msgArr = objConversation.painArr;
         }
         else if (content == 6) {
-            bg.setBackgroundResource(R.drawable.bg_how_to_med);
-            topbarLayout.setBackgroundResource(R.color.medicine_bar);
+            bg.setBackgroundResource(R.drawable.bg_how_to_med_darker);
+            topbarLayout.setBackgroundResource(R.color.dark_medicine_bar);
             title.setText("How to Take a Medicine");
             maxBubble = 10;
             msgArr = objConversation.medicineArr;
