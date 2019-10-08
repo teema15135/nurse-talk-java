@@ -31,18 +31,17 @@ public class VocabGame {
         ArrayList<Integer> index = new ArrayList<>();
         int textLength = currentDisplay.length();
 
-        boolean isCorrect = false;
+        String oldDisplay = currentDisplay;
 
         for (int i = 0; i < textLength; i++) {
             if (Character.toLowerCase(currentAnswer.charAt(i)) == selected) {
                 StringBuilder curr = new StringBuilder(currentDisplay);
                 curr.setCharAt(i, (i == 0 ? Character.toUpperCase(selected) : selected));
                 currentDisplay = curr.toString();
-                isCorrect = true;
             }
         }
 
-        if (isCorrect)
+        if (!oldDisplay.equalsIgnoreCase(currentDisplay)) // no update means incorrect
             return true;
         return false;
     }
