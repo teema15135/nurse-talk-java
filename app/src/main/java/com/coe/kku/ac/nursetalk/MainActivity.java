@@ -11,7 +11,7 @@ import android.widget.ImageButton;
 
 public class MainActivity extends AppCompatActivity {
 
-    Button vocabBtn, sentenceBtn, conversationBtn;
+    Button vocabBtn, sentenceBtn, conversationBtn,gameBtn;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -21,6 +21,7 @@ public class MainActivity extends AppCompatActivity {
         vocabBtn = (Button)findViewById(R.id.vocab_btn);
         sentenceBtn = (Button) findViewById(R.id.sentence_btn);
         conversationBtn = (Button) findViewById(R.id.conver_btn);
+        gameBtn = (Button) findViewById(R.id.games_btn);
 
         vocabBtn.setOnClickListener(new View.OnClickListener() {
             @Override
@@ -38,6 +39,12 @@ public class MainActivity extends AppCompatActivity {
             @Override
             public void onClick(View view) {
                 startActivity(new Intent(MainActivity.this, ConversationActivity.class));
+            }
+        });
+        gameBtn.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                startActivity(new Intent(MainActivity.this, GameMenuActivity.class));
             }
         });
 
