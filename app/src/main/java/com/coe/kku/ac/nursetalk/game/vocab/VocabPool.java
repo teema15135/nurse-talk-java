@@ -18,180 +18,180 @@ public class VocabPool {
 
         // Symptom vocab
         words.add(new HashMap<String, String>() {{
-            put("answer", "C o n s t i p a t i o n");
-            put("word",   "C _ n _ t _ p _ t _ _ _");
+            put("answer", "Constipation");
+            put("word",   "C_n_t_p_t___");
         }});
         words.add(new HashMap<String, String>() {{
-            put("answer", "D y s p e p s i a");
-            put("word",   "D _ s _ e _ s _ _");
+            put("answer", "Dyspepsia");
+            put("word",   "D_s_e_s__");
         }});
         words.add(new HashMap<String, String>() {{
-            put("answer", "D e h y d r a t i o n");
-            put("word",   "D _ _ _ d _ _ t _ _ _");
+            put("answer", "Dehydration");
+            put("word",   "D___d__t___");
         }});
         words.add(new HashMap<String, String>() {{
-            put("answer", "S p r a i n");
-            put("word",   "S _ _ _ _ n");
+            put("answer", "Sprain");
+            put("word",   "S____n");
         }});
         words.add(new HashMap<String, String>() {{
-            put("answer", "H e a r t b u r n");
-            put("word",   "H _ _ _ t b _ _ n");
+            put("answer", "Heartburn");
+            put("word",   "H___tb__n");
         }});
         words.add(new HashMap<String, String>() {{
-            put("answer", "T o o t h a c h e");
-            put("word",   "_ o o _ _ _ c _ _");
+            put("answer", "Toothache");
+            put("word",   "_oo___c__");
         }});
         words.add(new HashMap<String, String>() {{
-            put("answer", "S t o m a c h a c h e");
-            put("word",   "_ _ _ m a _ _ _ _ h e");
+            put("answer", "Stomachache");
+            put("word",   "___ma____he");
         }});
         words.add(new HashMap<String, String>() {{
-            put("answer", "E y e s t r a i n");
-            put("word",   "E _ _ _ t r _ _ _");
+            put("answer", "Eyestrain");
+            put("word",   "E___tr___");
         }});
         words.add(new HashMap<String, String>() {{
-            put("answer", "I n s o m n i a");
-            put("word",   "I _ _ _ _ n i _");
+            put("answer", "Insomnia");
+            put("word",   "I____ni_");
         }});
         words.add(new HashMap<String, String>() {{
-            put("answer", "C r i c k");
-            put("word",   "C r _ _ _");
+            put("answer", "Crick");
+            put("word",   "Cr___");
         }});
         words.add(new HashMap<String, String>() {{
-            put("answer", "S o r e   t h r o a t");
-            put("word",   "S _ _ e   t _ _ _ a t");
+            put("answer", "Sore throat");
+            put("word",   "S__e t___at");
         }});
         words.add(new HashMap<String, String>() {{
-            put("answer", "N o s e   b l e e d");
-            put("word",   "N _ _ _   b l _ _ d");
+            put("answer", "Nose bleed");
+            put("word",   "N___ bl__d");
         }});
         words.add(new HashMap<String, String>() {{
-            put("answer", "C o n v u l s i o n");
-            put("word",   "C _ _ v u _ _ _ _ n");
+            put("answer", "Convulsion");
+            put("word",   "C__vu____n");
         }});
         words.add(new HashMap<String, String>() {{
-            put("answer", "F r a c t u r e");
-            put("word",   "F _ _ _ t _ _ e");
+            put("answer", "Fracture");
+            put("word",   "F___t__e");
         }});
         words.add(new HashMap<String, String>() {{
-            put("answer", "B r o k e n   b o n e");
-            put("word",   "_ _ _ k e n   b _ _ e");
+            put("answer", "Broken bone");
+            put("word",   "___ken b__e");
         }});
         words.add(new HashMap<String, String>() {{
-            put("answer", "B u r n");
-            put("word",   "_ _ _ n");
+            put("answer", "Burn");
+            put("word",   "___n");
         }});
         words.add(new HashMap<String, String>() {{
-            put("answer", "B l i s t e r");
-            put("word",   "_ l _ _ t e r");
+            put("answer", "Blister");
+            put("word",   "_l__ter");
         }});
         words.add(new HashMap<String, String>() {{
-            put("answer", "C o n j u n c t i v i t i s");
-            put("word",   "_ _ n _ _ _ c t _ _ i t _ s");
+            put("answer", "Conjunctivitis");
+            put("word",   "__n___ct__it_s");
         }});
         words.add(new HashMap<String, String>() {{
-            put("answer", "N a u s e o u s");
-            put("word",   "_ a _ s _ o _ s");
+            put("answer", "Nauseous");
+            put("word",   "_a_s_o_s");
         }});
         words.add(new HashMap<String, String>() {{
-            put("answer", "V o m i t");
-            put("word",   "V _ _ i t");
+            put("answer", "Vomit");
+            put("word",   "V__it");
         }});
         words.add(new HashMap<String, String>() {{
-            put("answer", "B l e e d i n g");
-            put("word",   "_ l _ _ d i _ _");
+            put("answer", "Bleeding");
+            put("word",   "_l__di__");
         }});
         words.add(new HashMap<String, String>() {{
-            put("answer", "M i s s h a p e n");
-            put("word",   "M _ _ _ h _ p _ n");
+            put("answer", "Misshapen");
+            put("word",   "M___h_p_n");
         }});
         words.add(new HashMap<String, String>() {{
-            put("answer", "B r u i s e");
-            put("word",   "_ r u _ _ e");
+            put("answer", "Bruise");
+            put("word",   "_ru__e");
         }});
         words.add(new HashMap<String, String>() {{
-            put("answer", "C o u g h");
-            put("word",   "_ _ _ g h");
+            put("answer", "Cough");
+            put("word",   "___gh");
         }});
         words.add(new HashMap<String, String>() {{
-            put("answer", "I n f l a m e");
-            put("word",   "_ _ f _ _ m e");
+            put("answer", "Inflame");
+            put("word",   "__f__me");
         }});
         words.add(new HashMap<String, String>() {{
-            put("answer", "R u n n y   n o s e");
-            put("word",   "_ _ _ n y   n _ _ e");
+            put("answer", "Runny nose");
+            put("word",   "___ny n__e");
         }});
         words.add(new HashMap<String, String>() {{
-            put("answer", "P h l e g m");
-            put("word",   "P _ _ _ g m");
+            put("answer", "Phlegm");
+            put("word",   "P___gm");
         }});
         words.add(new HashMap<String, String>() {{
-            put("answer", "S w o l l e n");
-            put("word",   "S w _ _ _ _ n");
+            put("answer", "Swollen");
+            put("word",   "Sw____n");
         }});
         words.add(new HashMap<String, String>() {{
-            put("answer", "P u s");
-            put("word",   "P _ s");
+            put("answer", "Pus");
+            put("word",   "P_s");
         }});
         words.add(new HashMap<String, String>() {{
-            put("answer", "P u r u l e n t");
-            put("word",   "_ u _ _ l _ n t");
+            put("answer", "Purulent");
+            put("word",   "_u__l_nt");
         }});
         words.add(new HashMap<String, String>() {{
-            put("answer", "C h r o n i c");
-            put("word",   "C h r _ _ i _");
+            put("answer", "Chronic");
+            put("word",   "Chr__i_");
         }});
         words.add(new HashMap<String, String>() {{
-            put("answer", "H i c c u p");
-            put("word",   "H _ _ c _ p");
+            put("answer", "Hiccup");
+            put("word",   "H__c_p");
         }});
         words.add(new HashMap<String, String>() {{
-            put("answer", "P e r s p i r e");
-            put("word",   "_ e _ _ p i r _");
+            put("answer", "Perspire");
+            put("word",   "_e__pir_");
         }});
         words.add(new HashMap<String, String>() {{
-            put("answer", "R a s h");
-            put("word",   "R a _ _");
+            put("answer", "Rash");
+            put("word",   "Ra__");
         }});
         words.add(new HashMap<String, String>() {{
-            put("answer", "S h o r t   o f   b r e a t h");
-            put("word",   "_ h _ r t   o _   _ r _ a _ h");
+            put("answer", "Short of breath");
+            put("word",   "_h_rt o_ _r_a_h");
         }});
         words.add(new HashMap<String, String>() {{
-            put("answer", "I t c h y");
-            put("word",   "_ t _ c y");
+            put("answer", "Itchy");
+            put("word",   "_t_cy");
         }});
         words.add(new HashMap<String, String>() {{
-            put("answer", "D i z z y");
-            put("word",   "_ _ z _ y");
+            put("answer", "Dizzy");
+            put("word",   "__z_y");
         }});
         words.add(new HashMap<String, String>() {{
-            put("answer", "F e v e r");
-            put("word",   "_ e _ e r");
+            put("answer", "Fever");
+            put("word",   "_e_er");
         }});
         words.add(new HashMap<String, String>() {{
-            put("answer", "B a c k a c h e");
-            put("word",   "_ a _ k _ c _ e");
+            put("answer", "Backache");
+            put("word",   "_a_k_c_e");
         }});
         words.add(new HashMap<String, String>() {{
-            put("answer", "E a r a c h e");
-            put("word",   "_ _ r a c _ e");
+            put("answer", "Earache");
+            put("word",   "__rac_e");
         }});
         words.add(new HashMap<String, String>() {{
-            put("answer", "A c h e");
-            put("word",   "A _ _ e");
+            put("answer", "Ache");
+            put("word",   "A__e");
         }});
         words.add(new HashMap<String, String>() {{
-            put("answer", "A c u t e");
-            put("word",   "A _ _ _ e");
+            put("answer", "Acute");
+            put("word",   "A___e");
         }});
         words.add(new HashMap<String, String>() {{
-            put("answer", "F a i n t");
-            put("word",   "_ _ _ n t");
+            put("answer", "Faint");
+            put("word",   "___nt");
         }});
         words.add(new HashMap<String, String>() {{
-            put("answer", "F a t i g u e");
-            put("word",   "_ a _ i _ u _");
+            put("answer", "Fatigue");
+            put("word",   "_a_i_u_");
         }});
 
         // Disease vocab
