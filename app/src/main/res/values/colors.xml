@@ -22,6 +22,4 @@
     <color name="dark_pain_bar">#6A783D</color>
     <color name="medicine_bar">#DDA2AE</color>
     <color name="dark_medicine_bar">#78585E</color>
-    <color name="pain_bar">#C2DC71</color>
-    <color name="sign_bar">#E1B2BB</color>
 </resources>
