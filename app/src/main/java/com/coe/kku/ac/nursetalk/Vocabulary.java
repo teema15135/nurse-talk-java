@@ -12,7 +12,7 @@ import java.util.ArrayList;
 
 public class Vocabulary {
 
-    private String TAG = "Vocabulary Class";
+    private static String TAG = "Vocabulary Class";
 
     private static boolean isLoaded = false;
 
@@ -39,8 +39,8 @@ public class Vocabulary {
         symptomList.add(new Word("Backache", "แบ็คเอค", "ปวดหลัง"));
         symptomList.add(new Word("Bleeding", "บลีดดิ้ง", "ที่มีเลือดไหล"));
         symptomList.add(new Word("Blister", "บลิสเตอ", "แผลพุพอง"));
-        symptomList.add(new Word("Bloody", "nose บลัดดี้-โนส", "เลือดกำเดาไหล"));
-        symptomList.add(new Word("Broken", "bone โบรกเคน", "กระดูกหัก"));
+        symptomList.add(new Word("Bloody nose", "บลัดดี้-โนส", "เลือดกำเดาไหล"));
+        symptomList.add(new Word("Broken bone", "โบรกเคน-โบน", "กระดูกหัก"));
         symptomList.add(new Word("Bruise", "บรูซฺ", "แผลฟกช้ำ"));
         symptomList.add(new Word("Burn", "เบิรฺน แผลที่เกิดจากไฟไหม้", "น้ำร้อนลวก"));
         symptomList.add(new Word("Chronic", "ครอนิค", "เรื้อรัง"));
@@ -58,7 +58,7 @@ public class Vocabulary {
         symptomList.add(new Word("Fatigue", "ฟะ-ทิ้ก", "ความเหนื่อยล้า"));
         symptomList.add(new Word("Fever", "ฟี’เวอะ", "ไข้"));
         symptomList.add(new Word("Fracture", "แฟรคเจอ", "กระดูกร้าว/หัก"));
-        symptomList.add(new Word("Heartburn", "ฮารฺทเบิรฺน", "อาการจุกเสียดแน่นท้อง"));
+        symptomList.add(new Word("Heartburn", "ฮารฺทเบิรฺน", "ปวดแสบปวดร้อนบริเวณหน้าอกไปจนถึงลิ้นปี่"));
         symptomList.add(new Word("Hiccup", "ฮิคคัพ", "สะอึก"));
         symptomList.add(new Word("Inflame", "อินเฟลม", "อักเสบแสบ"));
         symptomList.add(new Word("Insomnia", "อินซอมเนีย", "อาการนอนไม่หลับ"));
@@ -125,5 +125,26 @@ public class Vocabulary {
 
     public static ArrayList<Word> getDiseaseWords() {
         return diseaseList;
+    }
+
+    public static String getTranslated(String word) {
+        if (!isLoaded) return "Unknown";
+
+        int symptomLength = symptomList.size();
+        int diseaseLength = diseaseList.size();
+
+        for (int i = 0; i < symptomLength; i++) {
+            Log.d(TAG, "getTranslated: " + word + " == " + symptomList.get(i).getWord().replaceAll(" ", ""));
+            if (symptomList.get(i).getWord().replaceAll(" ", "").equalsIgnoreCase(word))
+                return symptomList.get(i).getTranslated();
+        }
+
+        for (int i = 0; i < diseaseLength; i++) {
+            Log.d(TAG, "getTranslated: " + word + " == " + diseaseList.get(i).getWord().replaceAll(" ", ""));
+            if (diseaseList.get(i).getWord().replaceAll(" ", "").equalsIgnoreCase(word))
+                return diseaseList.get(i).getTranslated();
+        }
+
+        return "Unknown";
     }
 }
