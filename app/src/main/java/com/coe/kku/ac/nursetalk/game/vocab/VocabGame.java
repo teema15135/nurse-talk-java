@@ -1,5 +1,7 @@
 package com.coe.kku.ac.nursetalk.game.vocab;
 
+import com.coe.kku.ac.nursetalk.Vocabulary;
+
 import java.util.ArrayList;
 import java.util.HashMap;
 
@@ -10,9 +12,11 @@ public class VocabGame {
 
     private String currentDisplay;  // Current display in app ex. C h _ m p u
     private String currentAnswer; // Current stage correct answer ex. C h o m p u
+    private String currentTranslated; // Current stage translated word ex. คนที่สวย ๆ
 
     public VocabGame() {
         VocabPool.loadVocabPool();  // Must be loaded before use others function of VocabPool class
+        Vocabulary.loadVocab();  // Load vocabulary for translate the answer word
         providedWords = new ArrayList<>();
         this.nextStage();
     }
@@ -24,7 +28,12 @@ public class VocabGame {
         HashMap<String, String> stage = VocabPool.getRandomWord();
         currentDisplay = stage.get("word");
         currentAnswer = stage.get("answer");
+        currentTranslated = Vocabulary.getTranslated(
+                currentAnswer.replaceAll(" ", ""));
+
+        // Prevent to get duplicate word (that make game easier)
         if (providedWords.contains(currentAnswer)) nextStage();
+        else providedWords.add(currentAnswer);
     }
 
     public boolean alphabetInput(char selected) {
@@ -60,6 +69,10 @@ public class VocabGame {
 
     public String getCurrentAnswer() {
         return currentAnswer;
+    }
+
+    public String getCurrentTranslated() {
+        return currentTranslated;
     }
 
     public static VocabGame getInstance() {
