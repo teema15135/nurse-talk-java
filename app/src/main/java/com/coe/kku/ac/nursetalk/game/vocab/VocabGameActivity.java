@@ -3,12 +3,14 @@ package com.coe.kku.ac.nursetalk.game.vocab;
 import androidx.appcompat.app.AppCompatActivity;
 
 import android.content.Intent;
+import android.os.Build;
 import android.os.Bundle;
 import android.os.Handler;
 import android.util.Log;
 import android.view.View;
 import android.widget.Button;
 import android.widget.ImageButton;
+import android.widget.LinearLayout;
 import android.widget.TextView;
 
 import com.coe.kku.ac.nursetalk.MainActivity;
@@ -19,20 +21,23 @@ public class VocabGameActivity extends AppCompatActivity implements View.OnClick
     private static final String TAG = "VocabGameActivity";
 
     private int stageCounter = 1;
+    private int scoreCounter = 0;
+    private int incorrectCounter = 0;
 
     private Button q, w, e, r, t, y, u, i, o, p;
     private Button a, s, d, f, g, h, j, k, l;
     private Button z, x, c, v, b, n, m;
 
-    private TextView displayText, pressChar, stageDisplay;
+    private TextView displayText, translateText, stageDisplay;
 
     private ImageButton backButton, homeButton;
+
+    private LinearLayout incorrectLinLay;
 
     private VocabGame game;
 
 
     private Handler handler;
-    private Runnable currentRunnable;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -43,6 +48,8 @@ public class VocabGameActivity extends AppCompatActivity implements View.OnClick
 
         backButton = (ImageButton) findViewById(R.id.backVocabGameImgButton);
         homeButton = (ImageButton) findViewById(R.id.homeVocabGameImgButton);
+
+        incorrectLinLay = (LinearLayout) findViewById(R.id.linearLayoutIncorrectVocabGame);
 
         backButton.setOnClickListener(new View.OnClickListener() {
             @Override
@@ -61,7 +68,7 @@ public class VocabGameActivity extends AppCompatActivity implements View.OnClick
         });
 
         displayText = (TextView) findViewById(R.id.vocab_game_display_text_view);
-        pressChar = (TextView) findViewById(R.id.vocab_game_pressed_text_view);
+        translateText = (TextView) findViewById(R.id.vocab_game_translated_text_view);
         stageDisplay = (TextView) findViewById(R.id.vocab_game_stage_text_view);
 
         initializeAtoZButton();
@@ -70,7 +77,9 @@ public class VocabGameActivity extends AppCompatActivity implements View.OnClick
         game = VocabGame.getInstance();
 
         displayText.setText(game.getCurrentDisplay());
-        pressChar.setTextColor(getResources().getColor(R.color.white));
+        translateText.setText(game.getCurrentTranslated());
+
+        incorrectViewUpdate();
     }
 
     private void initializeAtoZButton() {
@@ -135,44 +144,85 @@ public class VocabGameActivity extends AppCompatActivity implements View.OnClick
         Log.d(TAG, "alphabetPress: " + c);
         boolean correct = game.alphabetInput(c);
 
-        updateDisplay(correct, c);
+        updateDisplay();
+
+        if (!correct) {
+            incorrectCounter++;
+            incorrectViewUpdate();
+            if (incorrectCounter >= 3) {
+                stageFail();
+            }
+        }
 
         if (game.isStageComplete()) {
             stageComplete();
         }
+
+
+        if (isGameComplete()) {
+            gameComplete();
+        }
     }
 
-    private void updateDisplay(boolean correct, char c) {
-        displayText.setText(game.getCurrentDisplay());
-        pressChar.setText(Character.toString(Character.toUpperCase(c)));
+    private void incorrectViewUpdate() {
+        incorrectLinLay.removeAllViewsInLayout();
+        LinearLayout.LayoutParams layoutParams = new LinearLayout.LayoutParams(
+                LinearLayout.LayoutParams.WRAP_CONTENT, LinearLayout.LayoutParams.WRAP_CONTENT);
+        int margin = (int) getResources().getDimension(R.dimen.vocab_game_X_counter_margin);
+        layoutParams.setMargins(margin, 0, margin, 0);
 
-        if (correct)
-            pressChar.setTextColor(getResources().getColor(R.color.colorPrimary));
-        else
-            pressChar.setTextColor(getResources().getColor(R.color.colorAccent));
+        for(int i = 1; i <= 3; i++) {
+            TextView textView = new TextView(VocabGameActivity.this);
+            textView.setText("X");
+            textView.setTextSize(getResources().getDimension(R.dimen.vocab_game_X_counter_font_size));
 
-        Runnable runnable = new Runnable() {
-            @Override
-            public void run() {
-                pressChar.setTextColor(getResources().getColor(R.color.white));
+            if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.O) {
+                textView.setTypeface(getResources().getFont(R.font.nunito_bold));
             }
-        };
 
-        try {
-            handler.removeCallbacks(currentRunnable);
-        } catch (Exception e) {}
-        currentRunnable = runnable;
-        handler.postDelayed(runnable, 1000);
+            textView.setLayoutParams(layoutParams);
+
+            if (i <= incorrectCounter) textView.setTextColor(getResources().getColor(R.color.colorAccent));
+            else textView.setTextColor(getResources().getColor(R.color.dark));
+            incorrectLinLay.addView(textView);
+        }
     }
 
-    private void stageComplete() {
+    private void updateDisplay() {
+        displayText.setText(game.getCurrentDisplay());
+    }
+
+    private void setupNewStage() {
         String completeWord = game.getCurrentAnswer();
         stageCounter++;
         game.nextStage();
-        stageDisplay.setText("Stage " + stageCounter);
+        stageDisplay.setText("Stage " + stageCounter + " / 10");
         displayText.setText(game.getCurrentDisplay());
+        translateText.setText(game.getCurrentTranslated());
 
-        pressChar.setText(completeWord);
+        incorrectCounter = 0;
+        incorrectViewUpdate();
+    }
+
+    private void stageFail() {
+        scoreCounter += 0;
+        setupNewStage();
+
+        Log.d(TAG, "stageFail!! :(");
+
+        // Delay for a half-second to re-enable all button
+        (new Handler()).postDelayed(new Runnable() {
+            @Override
+            public void run() {
+                enableAllButton();
+            }
+        }, 500);
+    }
+
+    private void stageComplete() {
+        scoreCounter += 1;
+        setupNewStage();
+
         Log.d(TAG, "stageComplete!!");
 
         // Delay for a half-second to re-enable all button
@@ -182,6 +232,20 @@ public class VocabGameActivity extends AppCompatActivity implements View.OnClick
                 enableAllButton();
             }
         }, 500);
+    }
+
+    private void gameComplete() {
+        Log.d(TAG, "gameComplete: with score " + scoreCounter);
+        // Do more things when game pass all stages
+
+        Intent intent = new Intent(VocabGameActivity.this, VocabGameCompleteActivity.class);
+        intent.putExtra("score", scoreCounter);
+        startActivity(intent);
+        finish();
+    }
+
+    private boolean isGameComplete() {
+        return (stageCounter > 10 ? true : false);
     }
 
     private void enableAllButton() {
