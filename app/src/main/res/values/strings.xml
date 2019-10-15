@@ -3,6 +3,7 @@
     <string name="title_activity_vocab">VocabActivity</string>
     <string name="vocabulary">Vocabulary</string>
     <string name="title_activity_test">TestActivity</string>
+
     <string name="disease">Disease</string>
     <string name="symptom">Symptom</string>
     <string name="head">Head and Neck</string>
@@ -11,10 +12,22 @@
     <string name="thorax">Thorax and Lungs</string>
     <string name="abdomen">Abdomen</string>
     <string name="other">Other</string>
+
     <string name="patient_interview">Patient Interview</string>
     <string name="take_a_vital">Take a Vital Sign</string>
     <string name="blood_test">Blood Test</string>
     <string name="urine_examination">Urine Examination</string>
     <string name="pain_management">Pain Management</string>
     <string name="how_to_take_a_medicine">How to Take\na Medicine</string>
+
+    <string name="sentence_greeting">Greeting and Introduction</string>
+    <string name="sentence_patient_interview">Patient Interview, History and Date Taking</string>
+    <string name="sentence_measuring">Measuring Vital Signs</string>
+    <string name="sentence_intravenous">Intravenous Infusion</string>
+    <string name="sentence_blood_test">Blood Test</string>
+    <string name="sentence_urine">Urine Examination</string>
+    <string name="sentence_pain">Pain Assessment</string>
+    <string name="sentence_dressing_would">Dressing Would</string>
+    <string name="sentence_health_education">Health Education</string>
+    <string name="sentence_take_a_medicine">Take a Medicine</string>
 </resources>
