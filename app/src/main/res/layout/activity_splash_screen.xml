@@ -10,9 +10,10 @@
 
     <ImageView
         android:id="@+id/splashLogo"
-        android:src="@drawable/splash_3"
+        android:src="@drawable/splash_6"
         android:textSize="30dp"
         android:gravity="center"
+        android:layout_marginTop="20dp"
         android:layout_width="300dp"
         android:layout_height="300dp"
         android:text="This is Splash."/>
