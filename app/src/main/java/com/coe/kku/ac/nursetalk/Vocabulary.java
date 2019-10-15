@@ -18,6 +18,12 @@ public class Vocabulary {
 
     private static ArrayList<Word> symptomList;
     private static ArrayList<Word> diseaseList;
+    private static ArrayList<Word> headNeckList;
+    private static ArrayList<Word> skinList;
+    private static ArrayList<Word> boneList;
+    private static ArrayList<Word> thoraxLungsList;
+    private static ArrayList<Word> abdomenList;
+    private static ArrayList<Word> otherList;
 
     public Vocabulary() {
 
@@ -27,9 +33,21 @@ public class Vocabulary {
         if (isLoaded) return;
         symptomList = new ArrayList<>();
         diseaseList = new ArrayList<>();
+        headNeckList = new ArrayList<>();
+        skinList = new ArrayList<>();
+        boneList = new ArrayList<>();
+        thoraxLungsList = new ArrayList<>();
+        abdomenList = new ArrayList<>();
+        otherList = new ArrayList<>();
 
         addSymptomList();
         addDiseaseList();
+        addHeadNeckList();
+        addSkinList();
+        addBoneList();
+        addThoraxLungsList();
+        addAbdomenList();
+        addOtherList();
         isLoaded = true;
     }
 
@@ -119,6 +137,72 @@ public class Vocabulary {
         diseaseList.add(new Word("Whooping cough", "วูปปิง คอฟ", "โรคไอกรน"));
     }
 
+    private static void addHeadNeckList() {
+        headNeckList.add(new Word("Bloody nose", "บลัดดี้-โนส", "เลือดกำเดาไหล"));
+        headNeckList.add(new Word("Conjunctivitis", "คอนจังทิไวซิส", "เยื่อบุตาอักเสบ/ตาแดง"));
+        headNeckList.add(new Word("Cough", "คอฟ", "ไอ"));
+        headNeckList.add(new Word("Dizzy", "ดิซ’ซี", "วิงเวียนศีรษะ"));
+        headNeckList.add(new Word("Earache", "เอียเอค", "เจ็บหู"));
+        headNeckList.add(new Word("Eyestrain", "อายสเตรน", "อาการเพลียตา"));
+        headNeckList.add(new Word("Hiccup", "ฮิคคัพ", "สะอึก"));
+        headNeckList.add(new Word("Nose bleed", "โนส บลีด", "อาการเลือดกำเดาไหล"));
+        headNeckList.add(new Word("Phlegm", "เฟลม", "เสมหะ"));
+        headNeckList.add(new Word("Runny nose", "รันนี โนส", "น้ำมูกไหล"));
+        headNeckList.add(new Word("Sore throat", "ซอรฺ โธรท", "อาการเจ็บคอ"));
+        headNeckList.add(new Word("Sore eye", "ซอรฺ อาย", "อาการเจ็บตา"));
+        headNeckList.add(new Word("Stuffy nose", "สตัฟฟี โนส", "อาการคัดจมูก"));
+        headNeckList.add(new Word("Toothache", "ทูธเอค", "อาการปวดฟัน"));
+        headNeckList.add(new Word("To sneeze", "ทู สนี๊ซ", "จาม"));
+    }
+
+    private static void addSkinList() {
+        skinList.add(new Word("Blister", "บลิสเตอ", "แผลพุพอง"));
+        skinList.add(new Word("Bruise", "บรูซฺ", "แผลฟกช้ำ"));
+        skinList.add(new Word("Burn", "เบิรฺน แผลที่เกิดจากไฟไหม้", "น้ำร้อนลวก"));
+        skinList.add(new Word("Itchy", "อิท’ชี", "อาการคัน"));
+        skinList.add(new Word("Perspire", "เพอรฺสไพรฺ", "เหงื่อออก"));
+        skinList.add(new Word("Rash", "แรช", "ผื่นคัน"));
+        skinList.add(new Word("Swollen", "สวอลเลิน", "บวม"));
+    }
+
+    private static void addBoneList() {
+        boneList.add(new Word("Broken bone", "โบรกเคน-โบน", "กระดูกหัก"));
+        boneList.add(new Word("Fracture", "แฟรคเจอ", "กระดูกร้าว/หัก"));
+        boneList.add(new Word("Misshapen", "มิสเชพเพน", "ที่ผิดรูปผิดร่าง"));
+    }
+
+    private static void addThoraxLungsList() {
+        thoraxLungsList.add(new Word("Heartburn", "ฮารฺทเบิรฺน", "ปวดแสบปวดร้อนบริเวณหน้าอกไปจนถึงลิ้นปี่"));
+        thoraxLungsList.add(new Word("Short of breath", "ชอร์ท ออฟ เบรธ", "หอบฮัก ๆ หายใจไม่ทั่วท้อง"));
+    }
+
+    private static void addAbdomenList() {
+        abdomenList.add(new Word("Constipation", "คอนสทิเพเชิน", "อาการท้องผูก"));
+        abdomenList.add(new Word("Dehydration", "ดีไฮเดรเชิน", "อาการที่ร่างกายขาดน้ำ"));
+        abdomenList.add(new Word("Dyspepsia", "ดิสเพพเซีย", "อาการอาหารไม่ย่อย"));
+        abdomenList.add(new Word("Nauseous", "นอเซียส", "คลื่นไส้"));
+        abdomenList.add(new Word("Stomachache", "สตอมัคเอค", "อาการปวดท้อง"));
+        abdomenList.add(new Word("Vomit", "วอมิทฺ", "อาเจียน"));
+    }
+
+    private static void addOtherList() {
+        otherList.add(new Word("Ache", "เอค", "อาการปวด"));
+        otherList.add(new Word("Acute", "อะ-คิ้วท์", "อาการป่วยที่เกิดขึ้นอย่างฉับพลัน"));
+        otherList.add(new Word("Backache", "แบ็คเอค", "ปวดหลัง"));
+        otherList.add(new Word("Bleeding", "บลีดดิ้ง", "ที่มีเลือดไหล"));
+        otherList.add(new Word("Chronic", "ครอนิค", "เรื้อรัง"));
+        otherList.add(new Word("Convulsion", "คอนวัลเชิน", "การชักกระตุก"));
+        otherList.add(new Word("Crick", "คริคฺ", "อาการเจ็บตึงกล้ามเนื้อ"));
+        otherList.add(new Word("Faint", "เฟ้นท์", "เป็นลม"));
+        otherList.add(new Word("Fatigue", "ฟะ-ทิ้ก", "ความเหนื่อยล้า"));
+        otherList.add(new Word("Fever", "ฟี’เวอะ", "ไข้"));
+        otherList.add(new Word("Inflame", "อินเฟลม", "อักเสบแสบ"));
+        otherList.add(new Word("Insomnia", "อินซอมเนีย", "อาการนอนไม่หลับ"));
+        otherList.add(new Word("Purulent", "พูรูเลนทฺ", "เป็นหนอง"));
+        otherList.add(new Word("Pus", "พัสฺ", "หนอง"));
+        otherList.add(new Word("Sprain", "สเปรน", "อาการเคล็ด หรือแพลง"));
+    }
+
     public static ArrayList<Word> getSymptomWords() {
         return symptomList;
     }
@@ -127,11 +211,41 @@ public class Vocabulary {
         return diseaseList;
     }
 
+    public static ArrayList<Word> getHeadNeckWords() {
+        return headNeckList;
+    }
+
+    public static ArrayList<Word> getSkinWords() {
+        return skinList;
+    }
+
+    public static ArrayList<Word> getBoneWords() {
+        return boneList;
+    }
+
+    public static ArrayList<Word> getThoraxLungsWords() {
+        return thoraxLungsList;
+    }
+
+    public static ArrayList<Word> getAbdomenWords() {
+        return abdomenList;
+    }
+
+    public static ArrayList<Word> getOtherWords() {
+        return otherList;
+    }
+
     public static String getTranslated(String word) {
         if (!isLoaded) return "Unknown";
 
         int symptomLength = symptomList.size();
         int diseaseLength = diseaseList.size();
+        int headNeckLength = headNeckList.size();
+        int skinLength = skinList.size();
+        int boneLength = boneList.size();
+        int thoraxLength = thoraxLungsList.size();
+        int abdomenLength = abdomenList.size();
+        int otherLength = otherList.size();
 
         for (int i = 0; i < symptomLength; i++) {
             Log.d(TAG, "getTranslated: " + word + " == " + symptomList.get(i).getWord().replaceAll(" ", ""));
@@ -143,6 +257,42 @@ public class Vocabulary {
             Log.d(TAG, "getTranslated: " + word + " == " + diseaseList.get(i).getWord().replaceAll(" ", ""));
             if (diseaseList.get(i).getWord().replaceAll(" ", "").equalsIgnoreCase(word))
                 return diseaseList.get(i).getTranslated();
+        }
+
+        for (int i = 0; i < headNeckLength; i++) {
+            Log.d(TAG, "getTranslated: " + word + " == " + headNeckList.get(i).getWord().replaceAll(" ", ""));
+            if (headNeckList.get(i).getWord().replaceAll(" ", "").equalsIgnoreCase(word))
+                return headNeckList.get(i).getTranslated();
+        }
+
+        for (int i = 0; i < skinLength; i++) {
+            Log.d(TAG, "getTranslated: " + word + " == " + skinList.get(i).getWord().replaceAll(" ", ""));
+            if (skinList.get(i).getWord().replaceAll(" ", "").equalsIgnoreCase(word))
+                return skinList.get(i).getTranslated();
+        }
+
+        for (int i = 0; i < boneLength; i++) {
+            Log.d(TAG, "getTranslated: " + word + " == " + boneList.get(i).getWord().replaceAll(" ", ""));
+            if (boneList.get(i).getWord().replaceAll(" ", "").equalsIgnoreCase(word))
+                return boneList.get(i).getTranslated();
+        }
+
+        for (int i = 0; i < thoraxLength; i++) {
+            Log.d(TAG, "getTranslated: " + word + " == " + thoraxLungsList.get(i).getWord().replaceAll(" ", ""));
+            if (thoraxLungsList.get(i).getWord().replaceAll(" ", "").equalsIgnoreCase(word))
+                return thoraxLungsList.get(i).getTranslated();
+        }
+
+        for (int i = 0; i < abdomenLength; i++) {
+            Log.d(TAG, "getTranslated: " + word + " == " + abdomenList.get(i).getWord().replaceAll(" ", ""));
+            if (abdomenList.get(i).getWord().replaceAll(" ", "").equalsIgnoreCase(word))
+                return abdomenList.get(i).getTranslated();
+        }
+
+        for (int i = 0; i < otherLength; i++) {
+            Log.d(TAG, "getTranslated: " + word + " == " + otherList.get(i).getWord().replaceAll(" ", ""));
+            if (otherList.get(i).getWord().replaceAll(" ", "").equalsIgnoreCase(word))
+                return otherList.get(i).getTranslated();
         }
 
         return "Unknown";

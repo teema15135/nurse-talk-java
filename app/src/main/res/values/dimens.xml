@@ -27,4 +27,6 @@
 
     <dimen name="vocab_game_X_counter_font_size">14sp</dimen>
     <dimen name="vocab_game_X_counter_margin">10dp</dimen>
+
+    <dimen name="margin_btn_sub_symptoms">8dp</dimen>
 </resources>

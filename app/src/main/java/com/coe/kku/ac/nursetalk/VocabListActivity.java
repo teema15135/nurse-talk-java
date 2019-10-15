@@ -25,6 +25,12 @@ public class VocabListActivity extends AppCompatActivity implements View.OnClick
 
     public final static int DISEASE = 0;
     public final static int SYMPTOM = 1;
+    public final static int HEAD = 2;
+    public final static int SKIN = 3;
+    public final static int BONE = 4;
+    public final static int THORAX = 5;
+    public final static int ABDOMEN = 6;
+    public final static int OTHER = 7;
 
     private int type;
 
@@ -68,6 +74,42 @@ public class VocabListActivity extends AppCompatActivity implements View.OnClick
                 headerTextView.setText(getString(R.string.symptom));
                 Log.d(TAG, "fetchVocabList: symptom selected");
                 Log.d(TAG, "example " + words.get(0).getWord());
+            case HEAD:
+                words = Vocabulary.getHeadNeckWords();
+                headerTextView.setText(getString(R.string.head));
+                Log.d(TAG, "fetchVocabList: head selected");
+                Log.d(TAG, "example " + words.get(0).getWord());
+                break;
+            case SKIN:
+                words = Vocabulary.getSkinWords();
+                headerTextView.setText(getString(R.string.skin));
+                Log.d(TAG, "fetchVocabList: skin selected");
+                Log.d(TAG, "example " + words.get(0).getWord());
+                break;
+            case BONE:
+                words = Vocabulary.getBoneWords();
+                headerTextView.setText(getString(R.string.bone));
+                Log.d(TAG, "fetchVocabList: bone selected");
+                Log.d(TAG, "example " + words.get(0).getWord());
+                break;
+            case THORAX:
+                words = Vocabulary.getThoraxLungsWords();
+                headerTextView.setText(getString(R.string.thorax));
+                Log.d(TAG, "fetchVocabList: thorax selected");
+                Log.d(TAG, "example " + words.get(0).getWord());
+                break;
+            case ABDOMEN:
+                words = Vocabulary.getAbdomenWords();
+                headerTextView.setText(getString(R.string.abdomen));
+                Log.d(TAG, "fetchVocabList: abdomen selected");
+                Log.d(TAG, "example " + words.get(0).getWord());
+                break;
+            case OTHER:
+                words = Vocabulary.getOtherWords();
+                headerTextView.setText(getString(R.string.other));
+                Log.d(TAG, "fetchVocabList: other selected");
+                Log.d(TAG, "example " + words.get(0).getWord());
+                break;
         }
 
         VocabListView adapter = new VocabListView(getApplicationContext(), words);

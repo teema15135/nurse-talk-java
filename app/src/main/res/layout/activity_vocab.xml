@@ -4,6 +4,7 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
+    android:layout_marginBottom="20dp"
     tools:context=".VocabActivity">
 
 
@@ -44,6 +45,7 @@
             android:layout_height="0dp"
             android:layout_weight="1" />
     </LinearLayout>
+
 
     <LinearLayout
         android:id="@+id/vocabBtnPanel"
@@ -111,6 +113,7 @@
     </LinearLayout>
 
     <LinearLayout
+        android:id="@+id/labelPanel"
         android:layout_width="match_parent"
         android:layout_height="50dp"
         android:layout_below="@id/vocabBtnPanel"
@@ -138,7 +141,83 @@
             android:textAlignment="center"
             android:textSize="20dp" />
 
+    </LinearLayout>
 
+    <LinearLayout
+        android:id="@+id/sub_symptom_panel"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/labelPanel"
+        android:layout_marginRight="60dp"
+        android:gravity="right"
+        android:visibility="gone"
+        android:orientation="vertical">
+        <Button
+            android:id="@+id/head_and_neck_btn"
+            android:layout_marginBottom="@dimen/margin_btn_sub_symptoms"
+            android:layout_width="wrap_content"
+            android:layout_height="30dp"
+            android:paddingRight="10dp"
+            android:paddingLeft="10dp"
+            android:textAllCaps="false"
+            android:background="@color/light_blue"
+            android:textColor="@color/dark"
+            android:text="Head and Neck"/>
+        <Button
+            android:id="@+id/skin_btn"
+            android:layout_marginBottom="@dimen/margin_btn_sub_symptoms"
+            android:layout_width="wrap_content"
+            android:layout_height="30dp"
+            android:paddingRight="10dp"
+            android:paddingLeft="10dp"
+            android:textAllCaps="false"
+            android:background="@color/light_blue"
+            android:textColor="@color/dark"
+            android:text="Skin"/>
+        <Button
+            android:id="@+id/bone_btn"
+            android:layout_marginBottom="@dimen/margin_btn_sub_symptoms"
+            android:layout_width="wrap_content"
+            android:layout_height="30dp"
+            android:paddingRight="10dp"
+            android:paddingLeft="10dp"
+            android:textAllCaps="false"
+            android:background="@color/light_blue"
+            android:textColor="@color/dark"
+            android:text="Bone"/>
+        <Button
+            android:id="@+id/thorax_btn"
+            android:layout_marginBottom="@dimen/margin_btn_sub_symptoms"
+            android:layout_width="wrap_content"
+            android:layout_height="30dp"
+            android:paddingRight="10dp"
+            android:paddingLeft="10dp"
+            android:textAllCaps="false"
+            android:background="@color/light_blue"
+            android:textColor="@color/dark"
+            android:text="Thorax and Lungs"/>
+        <Button
+            android:id="@+id/abdomen_btn"
+            android:layout_marginBottom="@dimen/margin_btn_sub_symptoms"
+            android:layout_width="wrap_content"
+            android:layout_height="30dp"
+            android:paddingRight="10dp"
+            android:paddingLeft="10dp"
+            android:textAllCaps="false"
+            android:background="@color/light_blue"
+            android:textColor="@color/dark"
+            android:text="Abdomen"/>
+        <Button
+            android:id="@+id/other_btn"
+            android:layout_marginBottom="@dimen/margin_btn_sub_symptoms"
+            android:layout_width="wrap_content"
+            android:layout_height="30dp"
+            android:paddingRight="10dp"
+            android:paddingLeft="10dp"
+            android:textAllCaps="false"
+            android:background="@color/light_blue"
+            android:textColor="@color/dark"
+            android:text="Other"/>
     </LinearLayout>
 
 </RelativeLayout>
