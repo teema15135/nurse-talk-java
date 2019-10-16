@@ -44,13 +44,16 @@ public class SentenceContentActivity extends AppCompatActivity {
         back.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                startActivity(new Intent(SentenceContentActivity.this, SentenceActivity.class));
+                finish();
             }
         });
         home.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                startActivity(new Intent(SentenceContentActivity.this, MainActivity.class));
+                Intent intent = new Intent(SentenceContentActivity.this, MainActivity.class);
+                intent.addFlags(Intent.FLAG_ACTIVITY_CLEAR_TOP);
+                startActivity(intent);
+                finish();
             }
         });
 
