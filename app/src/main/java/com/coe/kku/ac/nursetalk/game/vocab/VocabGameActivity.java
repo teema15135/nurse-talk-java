@@ -1,5 +1,6 @@
 package com.coe.kku.ac.nursetalk.game.vocab;
 
+import androidx.appcompat.app.AlertDialog;
 import androidx.appcompat.app.AppCompatActivity;
 
 import android.content.Intent;
@@ -36,6 +37,8 @@ public class VocabGameActivity extends AppCompatActivity implements View.OnClick
 
     private VocabGame game;
 
+    private AlertDialog.Builder builder;
+
 
     private Handler handler;
 
@@ -45,6 +48,8 @@ public class VocabGameActivity extends AppCompatActivity implements View.OnClick
         setContentView(R.layout.activity_vocab_game);
 
         handler = new Handler();
+        builder = new AlertDialog.Builder(VocabGameActivity.this);
+
 
         backButton = (ImageButton) findViewById(R.id.backVocabGameImgButton);
         homeButton = (ImageButton) findViewById(R.id.homeVocabGameImgButton);
@@ -194,6 +199,10 @@ public class VocabGameActivity extends AppCompatActivity implements View.OnClick
 
     private void setupNewStage() {
         String completeWord = game.getCurrentAnswer();
+
+        StageCompleteDialogFragment fragment = StageCompleteDialogFragment.newInstance(completeWord);
+        fragment.show(getSupportFragmentManager(), TAG);
+
         stageCounter++;
         game.nextStage();
         stageDisplay.setText("Stage " + stageCounter + " / 10");
