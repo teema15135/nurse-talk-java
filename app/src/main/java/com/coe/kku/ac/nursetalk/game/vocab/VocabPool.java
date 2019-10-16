@@ -195,7 +195,134 @@ public class VocabPool {
         }});
 
         // Disease vocab
-
+        words.add(new HashMap<String, String>() {{
+            put("answer", "Gout");
+            put("word",   "G___");
+        }});
+        words.add(new HashMap<String, String>() {{
+            put("answer", "Hemorrhoids");
+            put("word",   "__m___ho__s");
+        }});
+        words.add(new HashMap<String, String>() {{
+            put("answer", "Pneumonia");
+            put("word",   "P__umo__a");
+        }});
+        words.add(new HashMap<String, String>() {{
+            put("answer", "Gastritis");
+            put("word",   "_a_t_i_is");
+        }});
+        words.add(new HashMap<String, String>() {{
+            put("answer", "Enteritis");
+            put("word",   "E__e_i__s");
+        }});
+        words.add(new HashMap<String, String>() {{
+            put("answer", "Food poisoning");
+            put("word",   "F__d p__so___g");
+        }});
+        words.add(new HashMap<String, String>() {{
+            put("answer", "Diarrhea");
+            put("word",   "_i_r_h_a");
+        }});
+        words.add(new HashMap<String, String>() {{
+            put("answer", "Jaundice");
+            put("word",   "_a_n_i_e");
+        }});
+        words.add(new HashMap<String, String>() {{
+            put("answer", "Cirrhosis");
+            put("word",   "__r_h_s_s");
+        }});
+        words.add(new HashMap<String, String>() {{
+            put("answer", "Gallstones");
+            put("word",   "_a__s__nes");
+        }});
+        words.add(new HashMap<String, String>() {{
+            put("answer", "Diabetes");
+            put("word",   "D__be__s");
+        }});
+        words.add(new HashMap<String, String>() {{
+            put("answer", "Tonsillitis");
+            put("word",   "_o__i__i_is");
+        }});
+        words.add(new HashMap<String, String>() {{
+            put("answer", "Measles");
+            put("word",   "_e_s_es");
+        }});
+        words.add(new HashMap<String, String>() {{
+            put("answer", "German measles");
+            put("word",   "_e_m_n _e_s_es");
+        }});
+        words.add(new HashMap<String, String>() {{
+            put("answer", "Rubella");
+            put("word",   "_u_e_la");
+        }});
+        words.add(new HashMap<String, String>() {{
+            put("answer", "Cancer");
+            put("word",   "C_n_er");
+        }});
+        words.add(new HashMap<String, String>() {{
+            put("answer", "Chicken pox");
+            put("word",   "C_i_k_n _ox");
+        }});
+        words.add(new HashMap<String, String>() {{
+            put("answer", "Dengue fever");
+            put("word",   "_e_g_e f_v_r");
+        }});
+        words.add(new HashMap<String, String>() {{
+            put("answer", "Heart disease");
+            put("word",   "_e_rt _i_e_se");
+        }});
+        words.add(new HashMap<String, String>() {{
+            put("answer", "Whooping cough");
+            put("word",   "_h_op_ng c_u_h");
+        }});
+        words.add(new HashMap<String, String>() {{
+            put("answer", "Pertussis");
+            put("word",   "_e_t___is");
+        }});
+        words.add(new HashMap<String, String>() {{
+            put("answer", "Diphtheria");
+            put("word",   "_i_h__e_ia");
+        }});
+        words.add(new HashMap<String, String>() {{
+            put("answer", "Tetanus");
+            put("word",   "T_t_n_s");
+        }});
+        words.add(new HashMap<String, String>() {{
+            put("answer", "Asthmatic");
+            put("word",   "A__hm_t_c");
+        }});
+        words.add(new HashMap<String, String>() {{
+            put("answer", "Sinusitis");
+            put("word",   "S_n_s___s");
+        }});
+        words.add(new HashMap<String, String>() {{
+            put("answer", "Laryngitis");
+            put("word",   "_a_y_g_t_s");
+        }});
+        words.add(new HashMap<String, String>() {{
+            put("answer", "Allergy");
+            put("word",   "___er_y");
+        }});
+        words.add(new HashMap<String, String>() {{
+            put("answer", "Depression");
+            put("word",   "_e_r_s__on");
+        }});
+        words.add(new HashMap<String, String>() {{
+            put("answer", "Cold");
+            put("word",   "C__d");
+        }});
+        words.add(new HashMap<String, String>() {{
+            put("answer", "Chronic");
+            put("word",   "__ron_c");
+        }});
+        words.add(new HashMap<String, String>() {{
+            put("answer", "Tuberculosis");
+            put("word",   "__b_r_u_os_s");
+        }});
+        words.add(new HashMap<String, String>() {{
+            put("answer", "Appendicitis");
+            put("word",   "A__e_d_c_t_s");
+        }});
 
         wordLoaded = true;
     }
