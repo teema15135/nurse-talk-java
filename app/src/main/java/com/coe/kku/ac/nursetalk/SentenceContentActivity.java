@@ -4,6 +4,7 @@ import androidx.appcompat.app.AppCompatActivity;
 
 import android.content.Intent;
 import android.os.Bundle;
+import android.text.Html;
 import android.util.Log;
 import android.view.View;
 import android.widget.AdapterView;
@@ -61,43 +62,43 @@ public class SentenceContentActivity extends AppCompatActivity {
             default:
             case GREETING:
                 titleText.setText(getString(R.string.sentence_greeting));
-                contentText.setText(Sentence.greetingContent);
+                contentText.setText(Html.fromHtml(Sentence.greetingContent));
                 break;
             case PATIENT:
                 titleText.setText(getString(R.string.sentence_patient_interview));
-                contentText.setText(Sentence.patientInterviewContent);
+                contentText.setText(Html.fromHtml(Sentence.patientInterviewContent));
                 break;
             case MEASURE:
                 titleText.setText(getString(R.string.sentence_measuring));
-                contentText.setText(Sentence.measureContent);
+                contentText.setText(Html.fromHtml(Sentence.measureContent));
                 break;
             case INTRAVENOUSE:
                 titleText.setText(getString(R.string.sentence_intravenous));
-                contentText.setText(Sentence.intravenousContent);
+                contentText.setText(Html.fromHtml(Sentence.intravenousContent));
                 break;
             case BLOOD:
                 titleText.setText(getString(R.string.sentence_blood_test));
-                contentText.setText(Sentence.bloodTestContent);
+                contentText.setText(Html.fromHtml(Sentence.bloodTestContent));
                 break;
             case URINE:
                 titleText.setText(getString(R.string.sentence_urine));
-                contentText.setText(Sentence.urineContent);
+                contentText.setText(Html.fromHtml(Sentence.urineContent));
                 break;
             case PAIN:
                 titleText.setText(getString(R.string.sentence_pain));
-                contentText.setText(Sentence.painContent);
+                contentText.setText(Html.fromHtml(Sentence.painContent));
                 break;
             case DRESSING:
                 titleText.setText(getString(R.string.sentence_dressing_would));
-                contentText.setText(Sentence.dressingContent);
+                contentText.setText(Html.fromHtml(Sentence.dressingContent));
                 break;
             case HEALTH:
                 titleText.setText(getString(R.string.sentence_health_education));
-                contentText.setText(Sentence.healthContent);
+                contentText.setText(Html.fromHtml(Sentence.healthContent));
                 break;
             case MEDICINE:
                 titleText.setText(getString(R.string.sentence_take_a_medicine));
-                contentText.setText(Sentence.medicineContent);
+                contentText.setText(Html.fromHtml(Sentence.medicineContent));
                 break;
         }
     }
