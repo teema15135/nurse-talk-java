@@ -16,7 +16,6 @@ public class SentencePool {
     public static void loadSentencePool() {
         sentence = new ArrayList<>();
 
-        // Symptom vocab
         sentence.add(new HashMap<String, String>() {{
             put("answer", "I am a dog ");
             put("choice", "1");
@@ -66,6 +65,10 @@ public class SentencePool {
             put("answer", "I am a lion ");
             put("choice", "10");
             put("hint", "ฉันเป็นสิงโต");
+        }});
+        sentence.add(new HashMap<String, String>() {{
+            put("answer", "Teema loves Chompu");
+            put("hint", "ธีมารักชมพู่");
         }});
 
         sentenceLoaded = true;

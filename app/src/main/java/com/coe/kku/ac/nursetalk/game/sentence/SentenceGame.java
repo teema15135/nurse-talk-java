@@ -5,6 +5,7 @@ import com.coe.kku.ac.nursetalk.game.vocab.VocabGame;
 import com.coe.kku.ac.nursetalk.game.vocab.VocabPool;
 
 import java.util.ArrayList;
+import java.util.Arrays;
 import java.util.HashMap;
 
 public class SentenceGame {
@@ -62,7 +63,7 @@ public class SentenceGame {
 //        return (currentAnswer.equalsIgnoreCase(currentHint));
 //    }
 
-    public String getcurrentHint() {
+    public String getCurrentHint() {
         return currentHint;
     }
 
@@ -70,7 +71,11 @@ public class SentenceGame {
         return currentAnswer;
     }
 
-    public String getcurrentChoice() {
+    public ArrayList<String> getCurrentAnswerArray() {
+        return new ArrayList<>(Arrays.asList(currentAnswer.split(" ")));
+    }
+
+    public String getCurrentChoice() {
         return currentChoice;
     }
 
