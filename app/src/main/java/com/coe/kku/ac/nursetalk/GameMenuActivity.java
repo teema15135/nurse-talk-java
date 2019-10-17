@@ -7,6 +7,7 @@ import android.os.Bundle;
 import android.view.View;
 import android.widget.Button;
 
+import com.coe.kku.ac.nursetalk.game.sentence.SentenceGameActivity;
 import com.coe.kku.ac.nursetalk.game.vocab.VocabGameActivity;
 
 public class GameMenuActivity extends AppCompatActivity implements View.OnClickListener {
@@ -28,7 +29,7 @@ public class GameMenuActivity extends AppCompatActivity implements View.OnClickL
     @Override
     public void onClick(View view) {
         if (view == sentenceBtn) {
-
+            startActivity(new Intent(GameMenuActivity.this, SentenceGameActivity.class));
         } else if (view == vocabBtn) {
             startActivity(new Intent(GameMenuActivity.this, VocabGameActivity.class));
         }
