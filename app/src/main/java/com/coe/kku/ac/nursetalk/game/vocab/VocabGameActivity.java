@@ -3,6 +3,7 @@ package com.coe.kku.ac.nursetalk.game.vocab;
 import androidx.appcompat.app.AlertDialog;
 import androidx.appcompat.app.AppCompatActivity;
 
+import android.content.DialogInterface;
 import android.content.Intent;
 import android.os.Build;
 import android.os.Bundle;
@@ -17,7 +18,7 @@ import android.widget.TextView;
 import com.coe.kku.ac.nursetalk.MainActivity;
 import com.coe.kku.ac.nursetalk.R;
 
-public class VocabGameActivity extends AppCompatActivity implements View.OnClickListener {
+public class VocabGameActivity extends AppCompatActivity implements View.OnClickListener, DialogInterface.OnDismissListener {
 
     private static final String TAG = "VocabGameActivity";
 
@@ -198,12 +199,14 @@ public class VocabGameActivity extends AppCompatActivity implements View.OnClick
     }
 
     private void setupNewStage() {
-        String completeWord = game.getCurrentAnswer();
-
-        StageCompleteDialogFragment fragment = StageCompleteDialogFragment.newInstance(completeWord);
-        fragment.show(getSupportFragmentManager(), TAG);
 
         stageCounter++;
+
+        if (isGameComplete()) {
+            gameComplete();
+            return;
+        }
+
         game.nextStage();
         stageDisplay.setText("Stage " + stageCounter + " / 10");
         displayText.setText(game.getCurrentDisplay());
@@ -215,9 +218,13 @@ public class VocabGameActivity extends AppCompatActivity implements View.OnClick
 
     private void stageFail() {
         scoreCounter += 0;
-        setupNewStage();
 
         Log.d(TAG, "stageFail!! :(");
+
+        String completeWord = game.getCurrentAnswer();
+
+        StageCompleteDialogFragment fragment = StageCompleteDialogFragment.newInstance(completeWord);
+        fragment.show(getSupportFragmentManager(), TAG);
 
         // Delay for a half-second to re-enable all button
         (new Handler()).postDelayed(new Runnable() {
@@ -230,9 +237,13 @@ public class VocabGameActivity extends AppCompatActivity implements View.OnClick
 
     private void stageComplete() {
         scoreCounter += 1;
-        setupNewStage();
 
         Log.d(TAG, "stageComplete!!");
+
+        String completeWord = game.getCurrentAnswer();
+
+        StageCompleteDialogFragment fragment = StageCompleteDialogFragment.newInstance(completeWord);
+        fragment.show(getSupportFragmentManager(), TAG);
 
         // Delay for a half-second to re-enable all button
         (new Handler()).postDelayed(new Runnable() {
@@ -342,5 +353,10 @@ public class VocabGameActivity extends AppCompatActivity implements View.OnClick
             alphabetPress('z');
         }
         view.setEnabled(false); // disable pressed button
+    }
+
+    @Override
+    public void onDismiss(DialogInterface dialogInterface) {
+        setupNewStage();
     }
 }
