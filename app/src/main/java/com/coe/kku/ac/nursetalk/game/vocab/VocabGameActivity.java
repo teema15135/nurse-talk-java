@@ -254,7 +254,7 @@ public class VocabGameActivity extends AppCompatActivity implements View.OnClick
     }
 
     private boolean isGameComplete() {
-        return (stageCounter > 10 ? true : false);
+        return stageCounter > 10;
     }
 
     private void enableAllButton() {
