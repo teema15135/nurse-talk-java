@@ -1,9 +1,12 @@
 package com.coe.kku.ac.nursetalk.game.vocab;
 
+import android.app.Activity;
 import android.content.Context;
+import android.content.DialogInterface;
 import android.net.Uri;
 import android.os.Bundle;
 
+import androidx.annotation.NonNull;
 import androidx.annotation.Nullable;
 import androidx.fragment.app.DialogFragment;
 import androidx.fragment.app.Fragment;
@@ -83,6 +86,15 @@ public class StageCompleteDialogFragment extends DialogFragment {
             }
         });
 
+    }
+
+    @Override
+    public void onDismiss(@NonNull DialogInterface dialog) {
+        super.onDismiss(dialog);
+        final Activity activity = getActivity();
+        if (activity instanceof DialogInterface.OnDismissListener) {
+            ((DialogInterface.OnDismissListener) activity).onDismiss(dialog);
+        }
     }
 
     private void setupView() {
