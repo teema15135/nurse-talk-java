@@ -95,7 +95,7 @@ public class Sentence {
 
     public static String intravenousContent =
             "<b>I would like to give you intravenous fluids.</b><br>ฉันจะให้สารน้ำ/สารละลายทางหลอดเลือดดำกับคุณ<br><br>" +
-                    "<b>I would like to give you a drip.</b><br>นจะให้สารน้ำ/สารละลายทางหลอดเลือดดำกับคุณ<br><br>" +
+                    "<b>I would like to give you a drip.</b><br>ฉันจะให้สารน้ำ/สารละลายทางหลอดเลือดดำกับคุณ<br><br>" +
                     "<b>It’s an antibiotic for your lung infection.</b><br>ยาปฏิชีวนะสำหรับการติดเชื้อในปอด<br><br>" +
                     "<b>It’s an antibiotic for your incision.</b><br>ยาปฏิชีวนะสำหรับแผลผ่าตัด<br><br>" +
                     "<b>It’s an antibiotic for your brain infection.</b><br>ยาปฏิชีวนะสำหรับการติดเชื้อในสมอง<br><br>" +

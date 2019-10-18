@@ -86,7 +86,6 @@ public class StageCompleteDialogFragment extends DialogFragment {
                 dismiss();
             }
         });
-
     }
 
     @Override
