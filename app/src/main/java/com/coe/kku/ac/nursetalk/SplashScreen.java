@@ -34,7 +34,7 @@ public class SplashScreen extends AppCompatActivity {
             public void run() {
                 Intent intent = new Intent(SplashScreen.this, MainActivity.class);
                 startActivity(intent);
-                overridePendingTransition(R.anim.fade_in, R.anim.fade_out);
+//                overridePendingTransition(R.anim.fade_in, R.anim.fade_out);
                 finish();
             }
         };
@@ -43,7 +43,7 @@ public class SplashScreen extends AppCompatActivity {
     @Override
     public void onResume() {
         super.onResume();
-        handler.postDelayed(runnable, 2000);
+        handler.postDelayed(runnable, 2500);
     }
 
     @Override
