@@ -65,6 +65,7 @@ public class StageCompleteDialogFragment extends DialogFragment {
     public View onCreateView(LayoutInflater inflater, ViewGroup container,
                              Bundle savedInstanceState) {
         // Inflate the layout for this fragment
+        getDialog().setCanceledOnTouchOutside(false);
         return inflater.inflate(R.layout.fragment_stage_complete_dialog, container, false);
     }
 
