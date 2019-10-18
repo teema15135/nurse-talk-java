@@ -3,6 +3,7 @@ package com.coe.kku.ac.nursetalk;
 import androidx.appcompat.app.AppCompatActivity;
 
 import android.content.Intent;
+import android.media.MediaPlayer;
 import android.os.Bundle;
 import android.view.View;
 import android.widget.Button;
@@ -14,11 +15,15 @@ public class SentenceActivity extends AppCompatActivity implements View.OnClickL
     Button greetingBtn, patientBtn, measureBtn, intravenouseBtn,
             bloodBtn, urineBtn, painBtn, dressingBtn, healthBtn, medicineBtn;
 
+    MediaPlayer mp;
+
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_sentence);
+
+        mp = MediaPlayer.create(getApplicationContext(), R.raw.short_click);     // play short click sound
 
         backBtn = (ImageButton) findViewById(R.id.backSentenceImgButton);
         greetingBtn = (Button) findViewById(R.id.s_greeting_btn);
@@ -47,6 +52,7 @@ public class SentenceActivity extends AppCompatActivity implements View.OnClickL
         backBtn.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
+                mp.start();
                 startActivity(new Intent(SentenceActivity.this, MainActivity.class));
             }
         });
@@ -104,6 +110,6 @@ public class SentenceActivity extends AppCompatActivity implements View.OnClickL
             startActivity(i);
         }
 
-
+        mp.start();
     }
 }

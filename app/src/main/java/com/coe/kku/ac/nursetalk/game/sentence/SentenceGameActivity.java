@@ -9,6 +9,7 @@ import android.content.DialogInterface;
 import android.content.Intent;
 import android.graphics.Typeface;
 import android.media.Image;
+import android.media.MediaPlayer;
 import android.os.Build;
 import android.os.Bundle;
 import android.util.Log;
@@ -79,6 +80,8 @@ public class SentenceGameActivity extends AppCompatActivity implements DialogInt
 
     private final String SPACE = "      ";
 
+    private MediaPlayer mp;
+
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -101,12 +104,15 @@ public class SentenceGameActivity extends AppCompatActivity implements DialogInt
 
         sentenceGame = SentenceGame.getInstance();
 
+        mp = MediaPlayer.create(getApplicationContext(), R.raw.short_click);     // play short click sound
+
         setupNewStage();
         updateDisplayAndChoice();
 
         submitBtn.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
+                mp.start();
                 if (isChoiceEmpty())
                     doValidate();
                 else
@@ -116,12 +122,15 @@ public class SentenceGameActivity extends AppCompatActivity implements DialogInt
         backBtn.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
+                mp.start();
                 finish();
             }
         });
         homeBtn.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
+                mp.start();
+
                 Intent intent = new Intent(SentenceGameActivity.this, MainActivity.class);
                 intent.addFlags(Intent.FLAG_ACTIVITY_CLEAR_TOP);
                 startActivity(intent);
@@ -197,6 +206,7 @@ public class SentenceGameActivity extends AppCompatActivity implements DialogInt
                 displayTextView.setOnClickListener(new View.OnClickListener() {
                     @Override
                     public void onClick(View view) {
+                        mp.start();
                         removeWord(currentI);
                     }
                 });
@@ -236,6 +246,7 @@ public class SentenceGameActivity extends AppCompatActivity implements DialogInt
                 choiceTextView.setOnClickListener(new View.OnClickListener() {
                     @Override
                     public void onClick(View view) {
+                        mp.start();
                         selectWord(currentI);
                     }
                 });

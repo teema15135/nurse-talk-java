@@ -3,6 +3,7 @@ package com.coe.kku.ac.nursetalk;
 import androidx.appcompat.app.AppCompatActivity;
 
 import android.content.Intent;
+import android.media.MediaPlayer;
 import android.os.Build;
 import android.os.Bundle;
 import android.util.Log;
@@ -61,6 +62,9 @@ public class ConversationActivity extends AppCompatActivity implements View.OnCl
         back.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
+                MediaPlayer mp = MediaPlayer.create(getApplicationContext(), R.raw.short_click);     // play short click sound
+                mp.start();
+
                 startActivity(new Intent(ConversationActivity.this, MainActivity.class));
             }
         });
@@ -98,5 +102,8 @@ public class ConversationActivity extends AppCompatActivity implements View.OnCl
             i.putExtra("content", 6);
             startActivity(i);
         }
+
+        MediaPlayer mp = MediaPlayer.create(getApplicationContext(), R.raw.short_click);     // play short click sound
+        mp.start();
     }
 }

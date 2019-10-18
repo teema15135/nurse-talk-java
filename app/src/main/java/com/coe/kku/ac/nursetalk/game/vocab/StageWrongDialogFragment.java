@@ -2,6 +2,7 @@ package com.coe.kku.ac.nursetalk.game.vocab;
 
 import android.app.Activity;
 import android.content.DialogInterface;
+import android.media.MediaPlayer;
 import android.os.Bundle;
 import android.view.LayoutInflater;
 import android.view.View;
@@ -80,6 +81,9 @@ public class StageWrongDialogFragment extends DialogFragment {
         nextButton.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
+                MediaPlayer mp = MediaPlayer.create(getActivity().getApplicationContext(), R.raw.short_click);     // play short click sound
+                mp.start();
+
                 dismiss();
             }
         });

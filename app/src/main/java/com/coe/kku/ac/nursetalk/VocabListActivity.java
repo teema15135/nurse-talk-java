@@ -1,6 +1,7 @@
 package com.coe.kku.ac.nursetalk;
 
 import android.content.Intent;
+import android.media.MediaPlayer;
 import android.os.Bundle;
 
 import com.google.android.material.floatingactionbutton.FloatingActionButton;
@@ -40,10 +41,14 @@ public class VocabListActivity extends AppCompatActivity implements View.OnClick
     private ListView listView;
     private ImageButton backImgButton, homeImgButton;
 
+    MediaPlayer mp;
+
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_vocab_list);
+
+        mp = MediaPlayer.create(getApplicationContext(), R.raw.short_click);     // play short click sound
 
         this.type = getIntent().getIntExtra("type", 0);
 
@@ -132,5 +137,6 @@ public class VocabListActivity extends AppCompatActivity implements View.OnClick
             startActivity(intent);
             finish();
         }
+        mp.start();
     }
 }

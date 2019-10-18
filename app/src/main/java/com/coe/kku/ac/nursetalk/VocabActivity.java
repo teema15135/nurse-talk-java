@@ -1,6 +1,7 @@
 package com.coe.kku.ac.nursetalk;
 
 import android.content.Intent;
+import android.media.MediaPlayer;
 import android.os.Bundle;
 
 import androidx.appcompat.app.AppCompatActivity;
@@ -22,11 +23,14 @@ public class VocabActivity extends AppCompatActivity implements View.OnClickList
     private Vocabulary vocabInstance;
     private int type;
 
+    MediaPlayer mp;
+
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_vocab);
 
+        mp = MediaPlayer.create(getApplicationContext(), R.raw.short_click);     // play short click sound
 
         diseaseBtn = (ImageButton) findViewById(R.id.diseaseImgButton);
         symptomBtn = (ImageButton) findViewById(R.id.symptomImgButton);
@@ -97,6 +101,8 @@ public class VocabActivity extends AppCompatActivity implements View.OnClickList
             subSymptomPanel.setVisibility(View.GONE);
             finish();
         }
+
+        mp.start();
     }
 
     public void toggleSubSymptom() {

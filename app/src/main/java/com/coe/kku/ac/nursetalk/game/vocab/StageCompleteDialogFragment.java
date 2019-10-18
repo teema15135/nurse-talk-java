@@ -3,6 +3,7 @@ package com.coe.kku.ac.nursetalk.game.vocab;
 import android.app.Activity;
 import android.content.Context;
 import android.content.DialogInterface;
+import android.media.MediaPlayer;
 import android.net.Uri;
 import android.os.Bundle;
 
@@ -83,6 +84,9 @@ public class StageCompleteDialogFragment extends DialogFragment {
         nextButton.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
+                MediaPlayer mp = MediaPlayer.create(getActivity().getApplicationContext(), R.raw.short_click);     // play short click sound
+                mp.start();
+
                 dismiss();
             }
         });

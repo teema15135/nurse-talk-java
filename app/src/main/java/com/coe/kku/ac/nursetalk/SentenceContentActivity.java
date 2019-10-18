@@ -3,6 +3,7 @@ package com.coe.kku.ac.nursetalk;
 import androidx.appcompat.app.AppCompatActivity;
 
 import android.content.Intent;
+import android.media.MediaPlayer;
 import android.os.Bundle;
 import android.text.Html;
 import android.util.Log;
@@ -29,6 +30,8 @@ public class SentenceContentActivity extends AppCompatActivity {
     public final static int HEALTH = 9;
     public final static int MEDICINE = 10;
 
+    MediaPlayer mp;
+
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -41,15 +44,20 @@ public class SentenceContentActivity extends AppCompatActivity {
         titleText = (TextView) findViewById(R.id.sentence_title);
         contentText = (TextView) findViewById(R.id.sentence_content);
 
+        mp = MediaPlayer.create(getApplicationContext(), R.raw.short_click);     // play short click sound
+
         back.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
+                mp.start();
                 finish();
             }
         });
         home.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
+                mp.start();
+
                 Intent intent = new Intent(SentenceContentActivity.this, MainActivity.class);
                 intent.addFlags(Intent.FLAG_ACTIVITY_CLEAR_TOP);
                 startActivity(intent);

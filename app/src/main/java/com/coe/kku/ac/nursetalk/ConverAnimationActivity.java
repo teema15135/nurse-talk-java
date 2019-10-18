@@ -5,6 +5,7 @@ import androidx.appcompat.app.AppCompatActivity;
 import android.annotation.SuppressLint;
 import android.content.Intent;
 import android.media.Image;
+import android.media.MediaPlayer;
 import android.os.Bundle;
 import android.view.View;
 import android.widget.ArrayAdapter;
@@ -37,6 +38,7 @@ public class ConverAnimationActivity extends AppCompatActivity {
     private String msg;
     private String msgArr[];
     Conversation objConversation;
+    private MediaPlayer mp;
 
     @SuppressLint("WrongViewCast")
     @Override
@@ -54,6 +56,8 @@ public class ConverAnimationActivity extends AppCompatActivity {
         title = (TextView) findViewById(R.id.conver_title);
         bg = (ImageView) findViewById(R.id.conver_bg);
 
+        mp = MediaPlayer.create(getApplicationContext(), R.raw.short_click);     // play short click sound
+
 
         //set ListView adapter first
         adapter = new MessageAdapter(this, R.layout.left_chat_bubble, ChatBubbles);
@@ -65,12 +69,15 @@ public class ConverAnimationActivity extends AppCompatActivity {
         back.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
+                mp.start();
                 finish();
             }
         });
         home.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
+                mp.start();
+
                 Intent intent = new Intent(ConverAnimationActivity.this, MainActivity.class);
                 intent.addFlags(Intent.FLAG_ACTIVITY_CLEAR_TOP);
                 startActivity(intent);
@@ -132,6 +139,7 @@ public class ConverAnimationActivity extends AppCompatActivity {
             @Override
             public void onClick(View v) {
                 if (mCounter < maxBubble) {
+                    mp.start();  // play sound
 //                    msg = objConversation.urineArr[mCounter];
                     msg = msgArr[mCounter];
 

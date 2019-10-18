@@ -6,6 +6,7 @@ import androidx.core.content.ContextCompat;
 
 import android.content.DialogInterface;
 import android.content.Intent;
+import android.media.MediaPlayer;
 import android.os.Build;
 import android.os.Bundle;
 import android.os.Handler;
@@ -46,6 +47,8 @@ public class VocabGameActivity extends AppCompatActivity implements View.OnClick
 
     private AlertDialog.Builder builder;
 
+    private MediaPlayer mp;
+
 
     private Handler handler;
 
@@ -63,15 +66,19 @@ public class VocabGameActivity extends AppCompatActivity implements View.OnClick
 
         incorrectLinLay = (LinearLayout) findViewById(R.id.linearLayoutIncorrectVocabGame);
 
+        mp = MediaPlayer.create(getApplicationContext(), R.raw.short_click);     // play short click sound
+
         backButton.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
+                mp.start();
                 finish();
             }
         });
         homeButton.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
+                mp.start();
                 Intent intent = new Intent(VocabGameActivity.this, MainActivity.class);
                 intent.addFlags(Intent.FLAG_ACTIVITY_CLEAR_TOP);
                 startActivity(intent);
@@ -365,6 +372,8 @@ public class VocabGameActivity extends AppCompatActivity implements View.OnClick
         } else if (view == z) {
             alphabetPress('z');
         }
+
+        mp.start();
 
         view.setEnabled(false); // disable pressed button
 

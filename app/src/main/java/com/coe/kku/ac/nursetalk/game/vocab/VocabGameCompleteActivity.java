@@ -3,6 +3,7 @@ package com.coe.kku.ac.nursetalk.game.vocab;
 import androidx.appcompat.app.AppCompatActivity;
 
 import android.content.Intent;
+import android.media.MediaPlayer;
 import android.os.Bundle;
 import android.view.View;
 import android.widget.Button;
@@ -34,6 +35,9 @@ public class VocabGameCompleteActivity extends AppCompatActivity {
         okBtn.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
+                MediaPlayer mp = MediaPlayer.create(getApplicationContext(), R.raw.short_click);     // play short click sound
+                mp.start();
+
                 startActivity(new Intent(VocabGameCompleteActivity.this, GameMenuActivity.class));
             }
         });
