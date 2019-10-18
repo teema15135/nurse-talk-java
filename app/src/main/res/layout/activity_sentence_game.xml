@@ -52,19 +52,22 @@
 
 
     <LinearLayout
-        android:layout_width="290dp"
+        android:layout_width="match_parent"
         android:layout_height="150dp"
         android:layout_gravity="center"
-        android:layout_marginTop="70dp"
+        android:layout_marginTop="20dp"
         android:gravity="center"
         android:orientation="vertical">
 
-        <LinearLayout
+        <com.google.android.flexbox.FlexboxLayout
             android:id="@+id/sentence_game_display_linear_layout"
-            android:layout_width="220dp"
+            android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:gravity="center"
-            android:orientation="horizontal">
+            android:orientation="horizontal"
+            app:flexDirection="row"
+            app:flexWrap="wrap"
+            app:justifyContent="center">
 
             <TextView
                 android:id="@+id/textQuestion"
@@ -77,7 +80,7 @@
                 android:textColor="@color/dark_blue"
                 android:textSize="26sp" />
 
-        </LinearLayout>
+        </com.google.android.flexbox.FlexboxLayout>
 
 
     </LinearLayout>
@@ -98,7 +101,7 @@
         android:layout_height="80dp"
         android:layout_gravity="center"
         android:layout_marginTop="30dp"
-        android:layout_marginBottom="70dp"
+        android:layout_marginBottom="30dp"
         android:background="@android:color/transparent"
         android:clickable="false"
         android:focusable="false"
@@ -106,19 +109,22 @@
         android:padding="10dp"
         android:text="คำแปล"
         android:textColor="#332FA2"
-        android:textSize="32sp" />
+        android:textSize="20sp" />
 
 
-    <LinearLayout
+    <com.google.android.flexbox.FlexboxLayout
         android:id="@+id/sentence_game_choices_linear_layout"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:layout_marginLeft="24dp"
         android:layout_marginRight="24dp"
         android:gravity="center"
-        android:orientation="horizontal">
+        android:orientation="horizontal"
+        app:flexDirection="row"
+        app:flexWrap="wrap"
+        app:justifyContent="center">
 
-    </LinearLayout>
+    </com.google.android.flexbox.FlexboxLayout>
 
     <Button
         android:id="@+id/sentence_game_sumbit_btn"

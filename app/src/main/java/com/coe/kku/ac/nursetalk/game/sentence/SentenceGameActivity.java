@@ -29,6 +29,7 @@ import com.coe.kku.ac.nursetalk.game.vocab.VocabGame;
 
 import com.coe.kku.ac.nursetalk.game.vocab.StageCompleteDialogFragment;
 import com.coe.kku.ac.nursetalk.game.vocab.VocabGameCompleteActivity;
+import com.google.android.flexbox.FlexboxLayout;
 
 import org.w3c.dom.Text;
 
@@ -52,8 +53,11 @@ public class SentenceGameActivity extends AppCompatActivity implements DialogInt
     private TextView currentHintTextView;
     private TextView stageDisplay;
     private Button submitBtn;
-    private LinearLayout displayLN;
-    private LinearLayout choiceLN;
+//    private LinearLayout displayLN;
+//    private LinearLayout choiceLN;
+
+    private FlexboxLayout displayFL;
+    private FlexboxLayout choiceFL;
 
     private Animation smallbigforth;
 
@@ -79,8 +83,11 @@ public class SentenceGameActivity extends AppCompatActivity implements DialogInt
         currentHintTextView = (TextView) findViewById(R.id.sentence_game_hint_text_view);
         stageDisplay = (TextView) findViewById(R.id.sentence_game_stage_text_view);
 
-        displayLN = (LinearLayout) findViewById(R.id.sentence_game_display_linear_layout);
-        choiceLN = (LinearLayout) findViewById(R.id.sentence_game_choices_linear_layout);
+//        displayLN = (LinearLayout) findViewById(R.id.sentence_game_display_linear_layout);
+//        choiceLN = (LinearLayout) findViewById(R.id.sentence_game_choices_linear_layout);
+
+        displayFL = (FlexboxLayout) findViewById(R.id.sentence_game_display_linear_layout);
+        choiceFL = (FlexboxLayout) findViewById(R.id.sentence_game_choices_linear_layout);
 
         smallbigforth = AnimationUtils.loadAnimation(this, R.anim.smallbigforth);
 
@@ -130,13 +137,13 @@ public class SentenceGameActivity extends AppCompatActivity implements DialogInt
     }
 
     private void updateDisplayAndChoice() {
-        displayLN.removeAllViewsInLayout();
-        choiceLN.removeAllViewsInLayout();
+        displayFL.removeAllViewsInLayout();
+        choiceFL.removeAllViewsInLayout();
 
         LinearLayout.LayoutParams layoutParams = new LinearLayout.LayoutParams(ViewGroup.LayoutParams.WRAP_CONTENT, 100);
         int margin = (int) getResources().getDimension(R.dimen.vocab_game_X_counter_margin);
         margin -= margin / 2;
-        layoutParams.setMargins(margin, 0, margin, 0);
+        layoutParams.setMargins(margin, 0, margin, margin);
 
         for (int i = 0; i < answerSize; i++) {
             final int currentI = i;
@@ -160,7 +167,7 @@ public class SentenceGameActivity extends AppCompatActivity implements DialogInt
 
             displayTextView.setText(wordDisplay);
 
-            displayLN.addView(displayTextView);
+            displayFL.addView(displayTextView);
         }
 
         int choiceSize = currentChoice.size();
@@ -187,7 +194,7 @@ public class SentenceGameActivity extends AppCompatActivity implements DialogInt
             }
 
             choiceTextView.setText(wordChoice);
-            choiceLN.addView(choiceTextView);
+            choiceFL.addView(choiceTextView);
         }
     }
 
