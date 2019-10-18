@@ -9,9 +9,12 @@ import android.os.Build;
 import android.os.Bundle;
 import android.os.Handler;
 import android.util.Log;
+import android.util.TypedValue;
 import android.view.View;
+import android.view.ViewGroup;
 import android.widget.Button;
 import android.widget.ImageButton;
+import android.widget.ImageView;
 import android.widget.LinearLayout;
 import android.widget.TextView;
 
@@ -25,6 +28,7 @@ public class VocabGameActivity extends AppCompatActivity implements View.OnClick
     private int stageCounter = 1;
     private int scoreCounter = 0;
     private int incorrectCounter = 0;
+//    int dimensionInDp = (int) TypedValue.applyDimension(TypedValue.COMPLEX_UNIT_DIP, 30, getResources().getDisplayMetrics());
 
     private Button q, w, e, r, t, y, u, i, o, p;
     private Button a, s, d, f, g, h, j, k, l;
@@ -173,24 +177,30 @@ public class VocabGameActivity extends AppCompatActivity implements View.OnClick
     private void incorrectViewUpdate() {
         incorrectLinLay.removeAllViewsInLayout();
         LinearLayout.LayoutParams layoutParams = new LinearLayout.LayoutParams(
-                LinearLayout.LayoutParams.WRAP_CONTENT, LinearLayout.LayoutParams.WRAP_CONTENT);
+                100, 100);
         int margin = (int) getResources().getDimension(R.dimen.vocab_game_X_counter_margin);
         layoutParams.setMargins(margin, 0, margin, 0);
 
         for(int i = 1; i <= 3; i++) {
-            TextView textView = new TextView(VocabGameActivity.this);
-            textView.setText("X");
-            textView.setTextSize(getResources().getDimension(R.dimen.vocab_game_X_counter_font_size));
+//            TextView textView = new TextView(VocabGameActivity.this);
+//            textView.setText("X");
+//            textView.setTextSize(getResources().getDimension(R.dimen.vocab_game_X_counter_font_size));
+            ImageView heart = new ImageView(VocabGameActivity.this);
+            heart.setImageResource(R.drawable.like_red);
 
-            if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.O) {
-                textView.setTypeface(getResources().getFont(R.font.nunito_bold));
-            }
+//            if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.O) {
+//                textView.setTypeface(getResources().getFont(R.font.nunito_bold));
+//            }
 
-            textView.setLayoutParams(layoutParams);
+            heart.setLayoutParams(layoutParams);
 
-            if (i <= incorrectCounter) textView.setTextColor(getResources().getColor(R.color.colorAccent));
-            else textView.setTextColor(getResources().getColor(R.color.dark));
-            incorrectLinLay.addView(textView);
+            if (i <= incorrectCounter) heart.setImageResource(R.drawable.like_black);
+            else heart.setImageResource(R.drawable.like_red);
+            incorrectLinLay.addView(heart);
+
+//            if (i <= incorrectCounter) textView.setTextColor(getResources().getColor(R.color.colorAccent));
+//            else textView.setTextColor(getResources().getColor(R.color.dark));
+//            incorrectLinLay.addView(textView);
         }
     }
 

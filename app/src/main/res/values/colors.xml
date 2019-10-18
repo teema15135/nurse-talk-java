@@ -20,4 +20,6 @@
     <color name="dark_pain_bar">#6A783D</color>
     <color name="medicine_bar">#DDA2AE</color>
     <color name="dark_medicine_bar">#78585E</color>
+    <color name="light_green">#2ECC71</color>
+    <color name="light_red">#E74C3C</color>
 </resources>
