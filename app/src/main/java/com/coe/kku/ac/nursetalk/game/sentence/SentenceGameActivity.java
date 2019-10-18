@@ -8,6 +8,7 @@ import android.annotation.SuppressLint;
 import android.content.DialogInterface;
 import android.content.Intent;
 import android.graphics.Typeface;
+import android.media.Image;
 import android.os.Build;
 import android.os.Bundle;
 import android.util.Log;
@@ -18,6 +19,7 @@ import android.view.animation.Animation;
 import android.view.animation.AnimationUtils;
 import android.widget.Button;
 import android.widget.EditText;
+import android.widget.ImageView;
 import android.widget.LinearLayout;
 import android.widget.TextView;
 import android.widget.Toast;
@@ -28,6 +30,7 @@ import com.coe.kku.ac.nursetalk.SentenceActivity;
 import com.coe.kku.ac.nursetalk.game.vocab.VocabGame;
 
 import com.coe.kku.ac.nursetalk.game.vocab.StageCompleteDialogFragment;
+import com.coe.kku.ac.nursetalk.game.vocab.VocabGameActivity;
 import com.coe.kku.ac.nursetalk.game.vocab.VocabGameCompleteActivity;
 import com.google.android.flexbox.FlexboxLayout;
 
@@ -53,6 +56,7 @@ public class SentenceGameActivity extends AppCompatActivity implements DialogInt
     private TextView currentHintTextView;
     private TextView stageDisplay;
     private Button submitBtn;
+    private ImageView backBtn, homeBtn;
 //    private LinearLayout displayLN;
 //    private LinearLayout choiceLN;
 
@@ -72,12 +76,15 @@ public class SentenceGameActivity extends AppCompatActivity implements DialogInt
 
     private boolean firstStage = true;
 
-    private final String SPACE = "_____";
+    private final String SPACE = "      ";
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_sentence_game);
+
+        backBtn = (ImageView) findViewById(R.id.sentence_game_back);
+        homeBtn = (ImageView) findViewById(R.id.sentence_game_home);
 
         submitBtn = (Button) findViewById(R.id.sentence_game_sumbit_btn);
         currentHintTextView = (TextView) findViewById(R.id.sentence_game_hint_text_view);
@@ -103,6 +110,21 @@ public class SentenceGameActivity extends AppCompatActivity implements DialogInt
                     doValidate();
                 else
                     Toast.makeText(SentenceGameActivity.this, "Please complete the sentence first.", Toast.LENGTH_SHORT).show();
+            }
+        });
+        backBtn.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                finish();
+            }
+        });
+        homeBtn.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                Intent intent = new Intent(SentenceGameActivity.this, MainActivity.class);
+                intent.addFlags(Intent.FLAG_ACTIVITY_CLEAR_TOP);
+                startActivity(intent);
+                finish();
             }
         });
     }
@@ -145,18 +167,32 @@ public class SentenceGameActivity extends AppCompatActivity implements DialogInt
         margin -= margin / 2;
         layoutParams.setMargins(margin, 0, margin, margin);
 
+        Typeface typeface = ResourcesCompat.getFont(SentenceGameActivity.this, R.font.nunito_semibold);
+
         for (int i = 0; i < answerSize; i++) {
             final int currentI = i;
             String wordDisplay = currentDisplay.get(i);
 
             TextView displayTextView = new TextView(SentenceGameActivity.this);
             displayTextView.setLayoutParams(layoutParams);
-            displayTextView.setPadding(20, 20, 20, 20);
+            displayTextView.setPadding(20, 0, 20, 0);
+            displayTextView.setTypeface(typeface);
+            displayTextView.setTextSize(getResources().getDimension(R.dimen.sentence_game_font_size));
+            displayTextView.setTextColor(this.getResources().getColor(R.color.dark));
 
-            displayTextView.setBackgroundColor(getResources().getColor(R.color.dark));
+//            if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.JELLY_BEAN) {
+//                displayTextView.setBackground(ContextCompat.getDrawable(SentenceGameActivity.this, R.drawable.selector_light_blue_round));
+//            }
+//            else {
+//                displayTextView.setBackgroundColor(getResources().getColor(R.color.dark));
+//            }
 
             if (!wordDisplay.equalsIgnoreCase(SPACE)) {
-                displayTextView.setBackgroundColor(getResources().getColor(R.color.dark_blue));
+                if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.JELLY_BEAN) {
+                    displayTextView.setBackground(ContextCompat.getDrawable(SentenceGameActivity.this, R.drawable.selector_light_blue_round));
+                } else {
+                    displayTextView.setBackgroundColor(getResources().getColor(R.color.dark));
+                }
                 displayTextView.setOnClickListener(new View.OnClickListener() {
                     @Override
                     public void onClick(View view) {
@@ -178,13 +214,24 @@ public class SentenceGameActivity extends AppCompatActivity implements DialogInt
 
             TextView choiceTextView = new TextView(SentenceGameActivity.this);
             choiceTextView.setLayoutParams(layoutParams);
-            ;
-            choiceTextView.setPadding(20, 20, 20, 20);
 
-            choiceTextView.setBackgroundColor(getResources().getColor(R.color.dark));
+            choiceTextView.setPadding(20, 0, 20, 0);
+            choiceTextView.setTextSize(getResources().getDimension(R.dimen.sentence_game_font_size));
+            choiceTextView.setTextColor(this.getResources().getColor(R.color.dark));
+
+            if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.JELLY_BEAN) {
+                choiceTextView.setBackground(ContextCompat.getDrawable(SentenceGameActivity.this, R.drawable.shape_grey_round));
+            } else {
+                choiceTextView.setBackgroundColor(getResources().getColor(R.color.grey));
+            }
+            choiceTextView.setTypeface(typeface);
 
             if (!wordChoice.equalsIgnoreCase(SPACE)) {
-                choiceTextView.setBackgroundColor(getResources().getColor(R.color.dark_blue));
+                if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.JELLY_BEAN) {
+                    choiceTextView.setBackground(ContextCompat.getDrawable(SentenceGameActivity.this, R.drawable.selector_light_blue_round));
+                } else {
+                    choiceTextView.setBackgroundColor(getResources().getColor(R.color.dark_blue));
+                }
                 choiceTextView.setOnClickListener(new View.OnClickListener() {
                     @Override
                     public void onClick(View view) {
