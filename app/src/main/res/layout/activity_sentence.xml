@@ -32,7 +32,7 @@
 
         <!-- button table -->
         <LinearLayout
-            android:layout_marginTop="80dp"
+            android:layout_marginTop="60dp"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_gravity="center"
@@ -50,15 +50,25 @@
                         android:layout_width="@dimen/sentence_btn"
                         android:layout_height="@dimen/sentence_btn"
                         android:background="@drawable/selector_white_circle_btn"/>
+
                     <ImageView
-                        android:layout_width="65dp"
-                        android:layout_height="65dp"
+                        android:layout_width="70dp"
+                        android:layout_height="59dp"
                         android:layout_marginTop="14dp"
                         android:layout_marginRight="13dp"
-                        android:src="@drawable/st_hand"
                         android:background="@android:color/transparent"
                         android:scaleType="fitCenter"
-                        android:translationZ="3dp"/>
+                        android:src="@drawable/st_hand"
+                        android:translationZ="3dp" />
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:textColor="@color/white"
+                        android:fontFamily="@font/nunito_bold"
+                        android:textSize="15sp"
+                        android:text="Greeting"
+                        android:layout_centerHorizontal="true"
+                        android:layout_marginTop="80dp"/>
                 </RelativeLayout>
 
                 <RelativeLayout
@@ -81,6 +91,15 @@
                         android:background="@android:color/transparent"
                         android:scaleType="fitCenter"
                         android:translationZ="3dp"/>
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:textColor="@color/white"
+                        android:fontFamily="@font/nunito_bold"
+                        android:textSize="15sp"
+                        android:text="Interview"
+                        android:layout_centerHorizontal="true"
+                        android:layout_marginTop="80dp"/>
                 </RelativeLayout>
 
                 <RelativeLayout
@@ -101,11 +120,20 @@
                         android:background="@android:color/transparent"
                         android:scaleType="fitCenter"
                         android:translationZ="3dp"/>
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:textColor="@color/white"
+                        android:fontFamily="@font/nunito_bold"
+                        android:textSize="15sp"
+                        android:text="Measuring"
+                        android:layout_centerHorizontal="true"
+                        android:layout_marginTop="80dp"/>
                 </RelativeLayout>
             </LinearLayout>
 
             <LinearLayout
-                android:layout_marginTop="@dimen/sentence_btn_margin"
+                android:layout_marginTop="@dimen/sentence_btn_margin_top"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:orientation="horizontal">
@@ -117,15 +145,25 @@
                         android:layout_width="@dimen/sentence_btn"
                         android:layout_height="@dimen/sentence_btn"
                         android:background="@drawable/selector_white_circle_btn" />
+
                     <ImageView
-                        android:layout_width="65dp"
-                        android:layout_height="65dp"
-                        android:layout_marginTop="15dp"
-                        android:src="@drawable/st_transfusion"
+                        android:layout_width="73dp"
+                        android:layout_height="70dp"
                         android:layout_centerHorizontal="true"
+                        android:layout_marginTop="10dp"
                         android:background="@android:color/transparent"
                         android:scaleType="fitCenter"
-                        android:translationZ="3dp"/>
+                        android:src="@drawable/st_transfusion"
+                        android:translationZ="3dp" />
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:textColor="@color/white"
+                        android:fontFamily="@font/nunito_bold"
+                        android:textSize="15sp"
+                        android:text="Intravenous"
+                        android:layout_centerHorizontal="true"
+                        android:layout_marginTop="80dp"/>
                 </RelativeLayout>
 
                 <RelativeLayout
@@ -143,10 +181,19 @@
                         android:layout_height="58dp"
                         android:src="@drawable/st_syringe"
                         android:layout_centerHorizontal="true"
-                        android:layout_centerVertical="true"
+                        android:layout_marginTop="10dp"
                         android:background="@android:color/transparent"
                         android:scaleType="fitCenter"
                         android:translationZ="3dp"/>
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:textColor="@color/white"
+                        android:fontFamily="@font/nunito_bold"
+                        android:textSize="15sp"
+                        android:text="Blood Test"
+                        android:layout_centerHorizontal="true"
+                        android:layout_marginTop="80dp"/>
                 </RelativeLayout>
 
                 <RelativeLayout
@@ -162,17 +209,27 @@
                         android:layout_height="45dp"
                         android:src="@drawable/st_urine"
                         android:layout_centerHorizontal="true"
-                        android:layout_centerVertical="true"
+                        android:layout_marginTop="20dp"
                         android:background="@android:color/transparent"
                         android:scaleType="fitCenter"
                         android:translationZ="3dp"/>
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:textColor="@color/white"
+                        android:fontFamily="@font/nunito_bold"
+                        android:textSize="15sp"
+                        android:text="Urine Exam"
+                        android:layout_centerHorizontal="true"
+                        android:layout_marginTop="80dp"/>
 
                 </RelativeLayout>
 
             </LinearLayout>
 
+
             <LinearLayout
-                android:layout_marginTop="@dimen/sentence_btn_margin"
+                android:layout_marginTop="@dimen/sentence_btn_margin_top"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:orientation="horizontal">
@@ -193,6 +250,15 @@
                         android:background="@android:color/transparent"
                         android:scaleType="fitCenter"
                         android:translationZ="3dp"/>
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:textColor="@color/white"
+                        android:fontFamily="@font/nunito_bold"
+                        android:textSize="15sp"
+                        android:text="Pain"
+                        android:layout_centerHorizontal="true"
+                        android:layout_marginTop="80dp"/>
                 </RelativeLayout>
 
                 <RelativeLayout
@@ -210,10 +276,19 @@
                         android:layout_height="55dp"
                         android:src="@drawable/st_medical_kit"
                         android:layout_centerHorizontal="true"
-                        android:layout_centerVertical="true"
+                        android:layout_marginTop="15dp"
                         android:background="@android:color/transparent"
                         android:scaleType="fitCenter"
                         android:translationZ="3dp"/>
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:textColor="@color/white"
+                        android:fontFamily="@font/nunito_bold"
+                        android:textSize="15sp"
+                        android:text="Dressing"
+                        android:layout_centerHorizontal="true"
+                        android:layout_marginTop="80dp"/>
                 </RelativeLayout>
 
                 <RelativeLayout
@@ -233,11 +308,21 @@
                         android:background="@android:color/transparent"
                         android:scaleType="fitCenter"
                         android:translationZ="3dp"/>
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:textColor="@color/white"
+                        android:fontFamily="@font/nunito_bold"
+                        android:textSize="15sp"
+                        android:text="Health"
+                        android:layout_centerHorizontal="true"
+                        android:layout_marginTop="80dp"/>
                 </RelativeLayout>
             </LinearLayout>
 
+
             <LinearLayout
-                android:layout_marginTop="@dimen/sentence_btn_margin"
+                android:layout_marginTop="@dimen/sentence_btn_margin_top"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:orientation="horizontal">
@@ -255,12 +340,36 @@
                         android:layout_marginTop="15dp"
                         android:src="@drawable/st_pill"
                         android:layout_centerHorizontal="true"
-                        android:layout_centerVertical="true"
                         android:background="@android:color/transparent"
                         android:scaleType="fitCenter"
                         android:translationZ="3dp"/>
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:textColor="@color/white"
+                        android:fontFamily="@font/nunito_bold"
+                        android:textSize="15sp"
+                        android:text="Medicine"
+                        android:layout_centerHorizontal="true"
+                        android:layout_marginTop="80dp"/>
                 </RelativeLayout>
             </LinearLayout>
+
+            <!--<LinearLayout-->
+                <!--android:layout_width="wrap_content"-->
+                <!--android:layout_height="wrap_content"-->
+                <!--android:orientation="horizontal"-->
+                <!--android:weightSum="3">-->
+                <!--<TextView-->
+                    <!--android:layout_width="wrap_content"-->
+                    <!--android:layout_height="wrap_content"-->
+                    <!--android:layout_weight="1"-->
+                    <!--android:textColor="@color/white"-->
+                    <!--android:fontFamily="@font/nunito_bold"-->
+                    <!--android:textSize="15sp"-->
+                    <!--android:layout_marginLeft="15dp"-->
+                    <!--android:text="Medicine"/>-->
+            <!--</LinearLayout>-->
 
         </LinearLayout>
 
