@@ -233,7 +233,7 @@ public class VocabGameActivity extends AppCompatActivity implements View.OnClick
 
         String completeWord = game.getCurrentAnswer();
 
-        StageCompleteDialogFragment fragment = StageCompleteDialogFragment.newInstance(completeWord);
+        StageWrongDialogFragment fragment = StageWrongDialogFragment.newInstance(completeWord);
         fragment.show(getSupportFragmentManager(), TAG);
 
         // Delay for a half-second to re-enable all button

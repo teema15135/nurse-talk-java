@@ -1,0 +1,100 @@
+package com.coe.kku.ac.nursetalk.game.vocab;
+
+import android.app.Activity;
+import android.content.DialogInterface;
+import android.os.Bundle;
+import android.view.LayoutInflater;
+import android.view.View;
+import android.view.ViewGroup;
+import android.widget.Button;
+import android.widget.TextView;
+
+import androidx.annotation.NonNull;
+import androidx.annotation.Nullable;
+import androidx.fragment.app.DialogFragment;
+import androidx.fragment.app.Fragment;
+
+import com.coe.kku.ac.nursetalk.R;
+
+/**
+ * A simple {@link Fragment} subclass.
+ * Activities that contain this fragment must implement the
+ * to handle interaction events.
+ * Use the {@link StageCompleteDialogFragment#newInstance} factory method to
+ * create an instance of this fragment.
+ */
+public class StageWrongDialogFragment extends DialogFragment {
+    // TODO: Rename parameter arguments, choose names that match
+    // the fragment initialization parameters, e.g. ARG_ITEM_NUMBER
+    private static final String ARG_PARAM1 = "answerWord";
+
+    private TextView answerTextView;
+    private Button nextButton;
+
+    // TODO: Rename and change types of parameters
+    private String mParam1;
+
+    /**
+     * Use this factory method to create a new instance of
+     * this fragment using the provided parameters.
+     *
+     * @param param1 Parameter 1.
+     * @return A new instance of fragment StageCompleteDialogFragment.
+     */
+    // TODO: Rename and change types and number of parameters
+    public static StageWrongDialogFragment newInstance(String param1) {
+        StageWrongDialogFragment fragment = new StageWrongDialogFragment();
+        Bundle args = new Bundle();
+        args.putString(ARG_PARAM1, param1);
+        fragment.setArguments(args);
+        return fragment;
+    }
+
+    @Override
+    public void onCreate(Bundle savedInstanceState) {
+        super.onCreate(savedInstanceState);
+        if (getArguments() != null) {
+            mParam1 = getArguments().getString(ARG_PARAM1);
+        }
+    }
+
+    @Override
+    public View onCreateView(LayoutInflater inflater, ViewGroup container,
+                             Bundle savedInstanceState) {
+        // Inflate the layout for this fragment
+        getDialog().setCanceledOnTouchOutside(false);
+        return inflater.inflate(R.layout.fragment_stage_wrong_dialog, container, false);
+    }
+
+    @Override
+    public void onViewCreated(View view, @Nullable Bundle savedInstanceState) {
+        super.onViewCreated(view, savedInstanceState);
+        bindView(view);
+        setupView();
+    }
+
+    private void bindView(View view) {
+        answerTextView = (TextView) view.findViewById(R.id.answer_word_text_view_wrong);
+        nextButton = (Button) view.findViewById(R.id.next_button_vocab_stage_complete_dialog_wrong);
+
+        nextButton.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                dismiss();
+            }
+        });
+    }
+
+    @Override
+    public void onDismiss(@NonNull DialogInterface dialog) {
+        super.onDismiss(dialog);
+        final Activity activity = getActivity();
+        if (activity instanceof DialogInterface.OnDismissListener) {
+            ((DialogInterface.OnDismissListener) activity).onDismiss(dialog);
+        }
+    }
+
+    private void setupView() {
+        answerTextView.setText(mParam1);
+    }
+}

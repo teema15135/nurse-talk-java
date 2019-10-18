@@ -27,6 +27,7 @@ import android.widget.Toast;
 import com.coe.kku.ac.nursetalk.MainActivity;
 import com.coe.kku.ac.nursetalk.R;
 import com.coe.kku.ac.nursetalk.SentenceActivity;
+import com.coe.kku.ac.nursetalk.game.vocab.StageWrongDialogFragment;
 import com.coe.kku.ac.nursetalk.game.vocab.VocabGame;
 
 import com.coe.kku.ac.nursetalk.game.vocab.StageCompleteDialogFragment;
@@ -293,7 +294,7 @@ public class SentenceGameActivity extends AppCompatActivity implements DialogInt
         scoreCounter += 0;
 
         String completeAnswer = sentenceGame.getCurrentAnswer();
-        StageCompleteDialogFragment fragment = StageCompleteDialogFragment.newInstance(completeAnswer);
+        StageWrongDialogFragment fragment = StageWrongDialogFragment.newInstance(completeAnswer);
         fragment.show(getSupportFragmentManager(), TAG);
     }
 
