@@ -3,7 +3,8 @@
     <dimen name="home_btn">110dp</dimen>
 
     <dimen name="sentence_btn">80dp</dimen>
-    <dimen name="sentence_btn_margin">18dp</dimen>
+    <dimen name="sentence_btn_margin">20dp</dimen>
+    <dimen name="sentence_btn_margin_top">10dp</dimen>
 
     <dimen name="conver_btn_height">330dp</dimen>
     <dimen name="conver_btn_width">220dp</dimen>

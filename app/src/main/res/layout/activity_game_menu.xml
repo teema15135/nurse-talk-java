@@ -6,23 +6,46 @@
     android:layout_height="match_parent"
     tools:context=".GameMenuActivity">
 
+    <ImageView
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:src="@drawable/bg_1"
+        android:scaleType="centerCrop"/>
+
     <LinearLayout
         android:layout_width="match_parent"
         android:layout_height="200dp"
         android:layout_centerVertical="true"
+        android:orientation="vertical"
         android:gravity="center">
 
         <Button
             android:id="@+id/sentence_game_btn"
-            android:layout_width="wrap_content"
+            android:layout_width="150dp"
             android:layout_height="wrap_content"
+            android:background="@drawable/selector_round_corner"
+            android:textAllCaps="false"
+            android:fontFamily="@font/nunito_bold"
+            android:paddingHorizontal="10dp"
+            android:textSize="20sp"
+            android:textColor="@color/dark"
             android:text="Sentence"/>
 
         <Button
             android:id="@+id/vocab_game_btn"
-            android:layout_width="wrap_content"
+            android:layout_marginTop="15dp"
+            android:layout_width="150dp"
+            android:paddingHorizontal="10dp"
             android:layout_height="wrap_content"
+            android:textAllCaps="false"
+            android:fontFamily="@font/nunito_bold"
+            android:padding="10dp"
+            android:background="@drawable/selector_round_corner"
+            android:textSize="20sp"
+            android:textColor="@color/dark"
             android:text="Vocab"/>
+
+
 
     </LinearLayout>
 
