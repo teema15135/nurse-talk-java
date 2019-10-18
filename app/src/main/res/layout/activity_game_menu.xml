@@ -6,11 +6,22 @@
     android:layout_height="match_parent"
     tools:context=".GameMenuActivity">
 
+
+
     <ImageView
         android:layout_width="match_parent"
         android:layout_height="match_parent"
         android:src="@drawable/bg_1"
         android:scaleType="centerCrop"/>
+
+    <ImageButton
+        android:id="@+id/back_game_menu"
+        android:layout_width="@dimen/back_button_size"
+        android:layout_height="@dimen/back_button_size"
+        android:layout_margin="@dimen/back_button_margin"
+        android:background="@android:color/transparent"
+        android:scaleType="fitCenter"
+        android:src="@drawable/back_w_light" />
 
     <LinearLayout
         android:layout_width="match_parent"

@@ -2,6 +2,7 @@ package com.coe.kku.ac.nursetalk.game.vocab;
 
 import androidx.appcompat.app.AlertDialog;
 import androidx.appcompat.app.AppCompatActivity;
+import androidx.core.content.ContextCompat;
 
 import android.content.DialogInterface;
 import android.content.Intent;
@@ -20,6 +21,7 @@ import android.widget.TextView;
 
 import com.coe.kku.ac.nursetalk.MainActivity;
 import com.coe.kku.ac.nursetalk.R;
+import com.coe.kku.ac.nursetalk.game.sentence.SentenceGameActivity;
 
 public class VocabGameActivity extends AppCompatActivity implements View.OnClickListener, DialogInterface.OnDismissListener {
 
@@ -241,6 +243,7 @@ public class VocabGameActivity extends AppCompatActivity implements View.OnClick
             @Override
             public void run() {
                 enableAllButton();
+                restoreColorAlphaButton();
             }
         }, 500);
     }
@@ -362,11 +365,48 @@ public class VocabGameActivity extends AppCompatActivity implements View.OnClick
         } else if (view == z) {
             alphabetPress('z');
         }
+
         view.setEnabled(false); // disable pressed button
+
+        if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.JELLY_BEAN) {
+            view.setBackground(ContextCompat.getDrawable(VocabGameActivity.this, R.drawable.shape_grey_round));
+        }
     }
 
     @Override
     public void onDismiss(DialogInterface dialogInterface) {
         setupNewStage();
+    }
+
+    private void restoreColorAlphaButton() {
+        if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.JELLY_BEAN) {
+            a.setBackground(ContextCompat.getDrawable(VocabGameActivity.this, R.drawable.selector_light_blue_round));
+            b.setBackground(ContextCompat.getDrawable(VocabGameActivity.this, R.drawable.selector_light_blue_round));
+            c.setBackground(ContextCompat.getDrawable(VocabGameActivity.this, R.drawable.selector_light_blue_round));
+            d.setBackground(ContextCompat.getDrawable(VocabGameActivity.this, R.drawable.selector_light_blue_round));
+            e.setBackground(ContextCompat.getDrawable(VocabGameActivity.this, R.drawable.selector_light_blue_round));
+            f.setBackground(ContextCompat.getDrawable(VocabGameActivity.this, R.drawable.selector_light_blue_round));
+            g.setBackground(ContextCompat.getDrawable(VocabGameActivity.this, R.drawable.selector_light_blue_round));
+            h.setBackground(ContextCompat.getDrawable(VocabGameActivity.this, R.drawable.selector_light_blue_round));
+            i.setBackground(ContextCompat.getDrawable(VocabGameActivity.this, R.drawable.selector_light_blue_round));
+            j.setBackground(ContextCompat.getDrawable(VocabGameActivity.this, R.drawable.selector_light_blue_round));
+            l.setBackground(ContextCompat.getDrawable(VocabGameActivity.this, R.drawable.selector_light_blue_round));
+            m.setBackground(ContextCompat.getDrawable(VocabGameActivity.this, R.drawable.selector_light_blue_round));
+            n.setBackground(ContextCompat.getDrawable(VocabGameActivity.this, R.drawable.selector_light_blue_round));
+            o.setBackground(ContextCompat.getDrawable(VocabGameActivity.this, R.drawable.selector_light_blue_round));
+            p.setBackground(ContextCompat.getDrawable(VocabGameActivity.this, R.drawable.selector_light_blue_round));
+            q.setBackground(ContextCompat.getDrawable(VocabGameActivity.this, R.drawable.selector_light_blue_round));
+            r.setBackground(ContextCompat.getDrawable(VocabGameActivity.this, R.drawable.selector_light_blue_round));
+            s.setBackground(ContextCompat.getDrawable(VocabGameActivity.this, R.drawable.selector_light_blue_round));
+            t.setBackground(ContextCompat.getDrawable(VocabGameActivity.this, R.drawable.selector_light_blue_round));
+            u.setBackground(ContextCompat.getDrawable(VocabGameActivity.this, R.drawable.selector_light_blue_round));
+            v.setBackground(ContextCompat.getDrawable(VocabGameActivity.this, R.drawable.selector_light_blue_round));
+            w.setBackground(ContextCompat.getDrawable(VocabGameActivity.this, R.drawable.selector_light_blue_round));
+            x.setBackground(ContextCompat.getDrawable(VocabGameActivity.this, R.drawable.selector_light_blue_round));
+            y.setBackground(ContextCompat.getDrawable(VocabGameActivity.this, R.drawable.selector_light_blue_round));
+            z.setBackground(ContextCompat.getDrawable(VocabGameActivity.this, R.drawable.selector_light_blue_round));
+            k.setBackground(ContextCompat.getDrawable(VocabGameActivity.this, R.drawable.selector_light_blue_round));
+        }
+
     }
 }
