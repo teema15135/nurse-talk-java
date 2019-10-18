@@ -148,7 +148,7 @@
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:layout_below="@+id/labelPanel"
-        android:layout_marginRight="60dp"
+        android:layout_marginRight="40dp"
         android:gravity="right"
         android:visibility="gone"
         android:orientation="vertical">
@@ -160,7 +160,7 @@
             android:paddingRight="10dp"
             android:paddingLeft="10dp"
             android:textAllCaps="false"
-            android:background="@color/light_blue"
+            android:background="@drawable/selector_light_blue_round"
             android:textColor="@color/dark"
             android:text="Head and Neck"/>
         <Button
@@ -171,7 +171,7 @@
             android:paddingRight="10dp"
             android:paddingLeft="10dp"
             android:textAllCaps="false"
-            android:background="@color/light_blue"
+            android:background="@drawable/selector_light_blue_round"
             android:textColor="@color/dark"
             android:text="Skin"/>
         <Button
@@ -182,7 +182,7 @@
             android:paddingRight="10dp"
             android:paddingLeft="10dp"
             android:textAllCaps="false"
-            android:background="@color/light_blue"
+            android:background="@drawable/selector_light_blue_round"
             android:textColor="@color/dark"
             android:text="Bone"/>
         <Button
@@ -193,7 +193,7 @@
             android:paddingRight="10dp"
             android:paddingLeft="10dp"
             android:textAllCaps="false"
-            android:background="@color/light_blue"
+            android:background="@drawable/selector_light_blue_round"
             android:textColor="@color/dark"
             android:text="Thorax and Lungs"/>
         <Button
@@ -204,7 +204,7 @@
             android:paddingRight="10dp"
             android:paddingLeft="10dp"
             android:textAllCaps="false"
-            android:background="@color/light_blue"
+            android:background="@drawable/selector_light_blue_round"
             android:textColor="@color/dark"
             android:text="Abdomen"/>
         <Button
@@ -215,7 +215,7 @@
             android:paddingRight="10dp"
             android:paddingLeft="10dp"
             android:textAllCaps="false"
-            android:background="@color/light_blue"
+            android:background="@drawable/selector_light_blue_round"
             android:textColor="@color/dark"
             android:text="Other"/>
     </LinearLayout>
