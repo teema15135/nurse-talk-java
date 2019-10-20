@@ -9,11 +9,13 @@ import android.os.Bundle;
 import android.view.View;
 import android.widget.Button;
 import android.widget.ImageButton;
+import android.widget.TextView;
 
 public class MainActivity extends AppCompatActivity {
 
     Button vocabBtn, sentenceBtn, conversationBtn,gameBtn;
     MediaPlayer mp;
+    TextView creditTextview;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -26,6 +28,8 @@ public class MainActivity extends AppCompatActivity {
         sentenceBtn = (Button) findViewById(R.id.sentence_btn);
         conversationBtn = (Button) findViewById(R.id.conver_btn);
         gameBtn = (Button) findViewById(R.id.games_btn);
+
+        creditTextview = (TextView) findViewById(R.id.tv_credit);
 
         vocabBtn.setOnClickListener(new View.OnClickListener() {
             @Override
@@ -53,6 +57,13 @@ public class MainActivity extends AppCompatActivity {
             public void onClick(View view) {
                 mp.start();
                 startActivity(new Intent(MainActivity.this, GameMenuActivity.class));
+            }
+        });
+        creditTextview.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                mp.start();
+                startActivity(new Intent(MainActivity.this, CreditActivity.class));
             }
         });
 
