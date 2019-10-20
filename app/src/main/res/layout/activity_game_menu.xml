@@ -32,29 +32,29 @@
 
         <Button
             android:id="@+id/sentence_game_btn"
-            android:layout_width="150dp"
-            android:layout_height="wrap_content"
-            android:background="@drawable/selector_round_corner"
+            android:layout_width="200dp"
+            android:layout_height="70dp"
+            android:background="@drawable/listen_me"
             android:textAllCaps="false"
             android:fontFamily="@font/nunito_bold"
             android:paddingHorizontal="10dp"
             android:textSize="20sp"
             android:textColor="@color/dark"
-            android:text="Sentence"/>
+            android:text=""/>
 
         <Button
             android:id="@+id/vocab_game_btn"
             android:layout_marginTop="15dp"
-            android:layout_width="150dp"
+            android:layout_width="200dp"
             android:paddingHorizontal="10dp"
-            android:layout_height="wrap_content"
+            android:layout_height="70dp"
             android:textAllCaps="false"
             android:fontFamily="@font/nunito_bold"
             android:padding="10dp"
-            android:background="@drawable/selector_round_corner"
+            android:background="@drawable/fill_fun"
             android:textSize="20sp"
             android:textColor="@color/dark"
-            android:text="Vocab"/>
+            android:text=""/>
 
 
 

@@ -71,32 +71,26 @@ public class VocabActivity extends AppCompatActivity implements View.OnClickList
             Intent i = new Intent(VocabActivity.this, VocabListActivity.class);
             i.putExtra("type", VocabListActivity.HEAD);
             startActivity(i);
-            toggleSubSymptom();
         } else if (view == skinBtn) {
             Intent i = new Intent(VocabActivity.this, VocabListActivity.class);
             i.putExtra("type", VocabListActivity.SKIN);
             startActivity(i);
-            toggleSubSymptom();
         } else if (view == boneBtn) {
             Intent i = new Intent(VocabActivity.this, VocabListActivity.class);
             i.putExtra("type", VocabListActivity.BONE);
             startActivity(i);
-            toggleSubSymptom();
         } else if (view == thoraxBtn) {
             Intent i = new Intent(VocabActivity.this, VocabListActivity.class);
             i.putExtra("type", VocabListActivity.THORAX);
             startActivity(i);
-            toggleSubSymptom();
         } else if (view == abdomenBtn) {
             Intent i = new Intent(VocabActivity.this, VocabListActivity.class);
             i.putExtra("type", VocabListActivity.ABDOMEN);
             startActivity(i);
-            toggleSubSymptom();
         } else if (view == otherBtn) {
             Intent i = new Intent(VocabActivity.this, VocabListActivity.class);
             i.putExtra("type", VocabListActivity.OTHER);
             startActivity(i);
-            toggleSubSymptom();
         } else if (view == backBtn) {
             subSymptomPanel.setVisibility(View.GONE);
             finish();

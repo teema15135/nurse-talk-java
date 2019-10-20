@@ -31,6 +31,7 @@
     </RelativeLayout>
 
 
+
     <ScrollView
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
@@ -48,15 +49,6 @@
                 android:layout_height="wrap_content"
                 android:translationZ="5dp">
 
-                <ImageButton
-                    android:id="@+id/backSentenceContentButton"
-                    android:layout_width="@dimen/back_button_size"
-                    android:layout_height="@dimen/back_button_size"
-                    android:layout_margin="@dimen/back_button_margin"
-                    android:background="@android:color/transparent"
-                    android:scaleType="fitCenter"
-                    android:src="@drawable/back_w_light" />
-
                 <TextView
                     android:id="@+id/sentence_title"
                     android:layout_width="wrap_content"
@@ -71,16 +63,6 @@
                     android:textColor="@color/white"
                     android:textSize="40sp" />
 
-                <ImageButton
-                    android:id="@+id/homeSentencecontentButton"
-                    android:layout_width="@dimen/home_button_size"
-                    android:layout_height="@dimen/home_button_size"
-                    android:layout_alignParentRight="true"
-                    android:layout_margin="@dimen/back_button_margin"
-                    android:alpha="0.6"
-                    android:background="@android:color/transparent"
-                    android:scaleType="fitCenter"
-                    android:src="@drawable/home" />
 
                 <LinearLayout
                     android:layout_width="@dimen/sentence_board_content_w"
@@ -112,6 +94,33 @@
         </LinearLayout>
 
     </ScrollView>
+
+
+    <View
+        android:layout_width="match_parent"
+        android:layout_height="60dp"
+        android:background="@color/light_blue"
+        android:alpha="0.9"/>
+
+    <ImageButton
+        android:id="@+id/backSentenceContentButton"
+        android:layout_width="@dimen/back_button_size"
+        android:layout_height="@dimen/back_button_size"
+        android:layout_margin="17dp"
+        android:background="@android:color/transparent"
+        android:scaleType="fitCenter"
+        android:src="@drawable/back_w_light" />
+
+    <ImageButton
+        android:id="@+id/homeSentencecontentButton"
+        android:layout_width="@dimen/home_button_size"
+        android:layout_height="@dimen/home_button_size"
+        android:layout_alignParentRight="true"
+        android:layout_margin="17dp"
+        android:alpha="0.6"
+        android:background="@android:color/transparent"
+        android:scaleType="fitCenter"
+        android:src="@drawable/home" />
 
 
 

@@ -270,6 +270,7 @@ public class VocabGameActivity extends AppCompatActivity implements View.OnClick
             @Override
             public void run() {
                 enableAllButton();
+                restoreColorAlphaButton();
             }
         }, 500);
     }
