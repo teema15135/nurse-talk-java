@@ -9,8 +9,9 @@
     tools:context=".game.sentence.SentenceGameActivity">
 
     <LinearLayout
+        android:weightSum="10"
         android:layout_width="match_parent"
-        android:layout_height="wrap_content"
+        android:layout_height="match_parent"
         android:orientation="vertical">
 
         <RelativeLayout
@@ -50,17 +51,18 @@
             android:background="@drawable/round_outline"
             android:backgroundTint="@color/dark_blue"
             android:fontFamily="@font/nunito_semibold"
-            android:padding="20dp"
+            android:paddingHorizontal="20dp"
             android:text="Stage 1 / 10"
             android:textColor="@android:color/darker_gray"
             android:textSize="20sp" />
 
 
         <LinearLayout
+            android:layout_weight="3.5"
             android:layout_width="match_parent"
-            android:layout_height="150dp"
+            android:layout_height="0dp"
             android:layout_gravity="center"
-            android:layout_margin="20dp"
+            android:layout_marginHorizontal="10dp"
             android:gravity="center"
             android:orientation="vertical">
 
@@ -87,26 +89,15 @@
 
             </com.google.android.flexbox.FlexboxLayout>
 
-
         </LinearLayout>
 
-        <!--<ListView-->
-        <!--android:id="@+id/sentence_game_list"-->
-        <!--android:layout_gravity="center_horizontal"-->
-        <!--android:layout_width="300dp"-->
-        <!--android:layout_height="wrap_content"-->
-        <!--android:transcriptMode="alwaysScroll"-->
-        <!--android:scrollbars="none"-->
-        <!--android:listSelector="@android:color/transparent"-->
-        <!--&gt;</ListView>-->
-
         <TextView
+            android:layout_weight="2"
             android:id="@+id/sentence_game_hint_text_view"
-            android:layout_width="320dp"
-            android:layout_height="80dp"
+            android:layout_width="match_parent"
+            android:layout_height="0dp"
             android:layout_gravity="center"
-            android:layout_marginTop="30dp"
-            android:layout_marginBottom="30dp"
+            android:layout_marginHorizontal="30dp"
             android:background="@android:color/transparent"
             android:clickable="false"
             android:focusable="false"
@@ -118,37 +109,50 @@
             android:textSize="20sp" />
 
 
-        <com.google.android.flexbox.FlexboxLayout
-            android:id="@+id/sentence_game_choices_linear_layout"
+        <LinearLayout
+            android:layout_weight="3.5"
+            android:layout_gravity="center_vertical"
+            android:gravity="center"
+            android:layout_width="match_parent"
+            android:layout_height="0dp">
+            <com.google.android.flexbox.FlexboxLayout
+                android:id="@+id/sentence_game_choices_linear_layout"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginLeft="24dp"
+                android:layout_marginRight="24dp"
+                android:gravity="center"
+                android:orientation="horizontal"
+                app:flexDirection="row"
+                app:flexWrap="wrap"
+                app:justifyContent="center">
+
+            </com.google.android.flexbox.FlexboxLayout>
+        </LinearLayout>
+
+
+
+        <LinearLayout
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:layout_marginLeft="24dp"
-            android:layout_marginRight="24dp"
             android:gravity="center"
-            android:orientation="horizontal"
-            app:flexDirection="row"
-            app:flexWrap="wrap"
-            app:justifyContent="center">
-
-        </com.google.android.flexbox.FlexboxLayout>
+            android:layout_weight="1">
+            <Button
+                android:id="@+id/sentence_game_sumbit_btn"
+                android:layout_width="300dp"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center"
+                android:background="@drawable/selector_light_blue_round"
+                android:fontFamily="@font/nunito_bold"
+                android:gravity="center"
+                android:text="Submit"
+                android:textColor="@color/white" />
+        </LinearLayout>
 
 
     </LinearLayout>
 
 
-    <Button
-        android:layout_alignParentBottom="true"
-        android:layout_centerHorizontal="true"
-        android:id="@+id/sentence_game_sumbit_btn"
-        android:layout_width="300dp"
-        android:layout_height="wrap_content"
-        android:layout_gravity="center_horizontal"
-        android:layout_marginTop="20dp"
-        android:layout_marginBottom="50dp"
-        android:background="@drawable/selector_light_blue_round"
-        android:fontFamily="@font/nunito_bold"
-        android:gravity="center"
-        android:text="Submit"
-        android:textColor="@color/white" />
+
 
 </RelativeLayout>
