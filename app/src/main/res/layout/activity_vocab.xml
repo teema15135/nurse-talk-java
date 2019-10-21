@@ -157,7 +157,7 @@
             android:layout_marginRight="40dp"
             android:gravity="right"
             android:orientation="vertical"
-            android:visibility="visible">
+            android:visibility="gone">
 
             <Button
                 android:id="@+id/head_and_neck_btn"
