@@ -65,7 +65,7 @@ public class ConversationActivity extends AppCompatActivity implements View.OnCl
                 MediaPlayer mp = MediaPlayer.create(getApplicationContext(), R.raw.short_click);     // play short click sound
                 mp.start();
 
-                startActivity(new Intent(ConversationActivity.this, MainActivity.class));
+                finish();
             }
         });
     }

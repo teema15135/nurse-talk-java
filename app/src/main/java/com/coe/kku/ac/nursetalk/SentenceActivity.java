@@ -53,7 +53,7 @@ public class SentenceActivity extends AppCompatActivity implements View.OnClickL
             @Override
             public void onClick(View v) {
                 mp.start();
-                startActivity(new Intent(SentenceActivity.this, MainActivity.class));
+                finish();
             }
         });
     }
