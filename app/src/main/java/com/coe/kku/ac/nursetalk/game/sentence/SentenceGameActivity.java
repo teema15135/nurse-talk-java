@@ -44,7 +44,7 @@ public class SentenceGameActivity extends AppCompatActivity implements DialogInt
     private TextView currentHintTextView;
     private TextView stageDisplay;
     private Button submitBtn;
-    private ImageView backBtn, homeBtn;
+    private ImageView backBtn, homeBtn, playBtn;
 
     private FlexboxLayout displayFL;
     private FlexboxLayout choiceFL;
@@ -71,6 +71,7 @@ public class SentenceGameActivity extends AppCompatActivity implements DialogInt
 
         backBtn = (ImageView) findViewById(R.id.sentence_game_back);
         homeBtn = (ImageView) findViewById(R.id.sentence_game_home);
+        playBtn = (ImageView) findViewById(R.id.sentence_game_play_sound);
 
         submitBtn = (Button) findViewById(R.id.sentence_game_sumbit_btn);
         currentHintTextView = (TextView) findViewById(R.id.sentence_game_hint_text_view);
@@ -116,6 +117,12 @@ public class SentenceGameActivity extends AppCompatActivity implements DialogInt
                 finish();
             }
         });
+        playBtn.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                speak();
+            }
+        });
     }
 
     private void setupNewStage() {
@@ -145,11 +152,7 @@ public class SentenceGameActivity extends AppCompatActivity implements DialogInt
 
         updateDisplayAndChoice();
 
-        String sentence = "";
-        for( String word : currentAnswer)
-            sentence += word + " ";
-
-        speak(sentence);
+        speak();
 
     }
 
@@ -321,10 +324,14 @@ public class SentenceGameActivity extends AppCompatActivity implements DialogInt
             stageFail();
     }
 
-    private void speak(String message) {
+    private void speak() {
+        String sentence = "";
+        for( String word : currentAnswer)
+            sentence += word + " ";
+
         VocabTTS.getInstance(SentenceGameActivity.this)
                 .setLocale(new Locale("en"))
-                .speak(message);
+                .speak(sentence);
     }
 
     @Override
